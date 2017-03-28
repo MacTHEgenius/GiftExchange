@@ -7,23 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A7ECEF81D4DC0EB00D29DD3 /* RulesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7ECEF71D4DC0EB00D29DD3 /* RulesTableViewController.swift */; };
 		6AA83D301D49DC1F00B36668 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D2F1D49DC1F00B36668 /* AppDelegate.swift */; };
-		6AA83D321D49DC1F00B36668 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D311D49DC1F00B36668 /* FirstViewController.swift */; };
-		6AA83D341D49DC1F00B36668 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D331D49DC1F00B36668 /* SecondViewController.swift */; };
 		6AA83D371D49DC1F00B36668 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA83D351D49DC1F00B36668 /* Main.storyboard */; };
 		6AA83D391D49DC1F00B36668 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AA83D381D49DC1F00B36668 /* Assets.xcassets */; };
 		6AA83D3C1D49DC1F00B36668 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA83D3A1D49DC1F00B36668 /* LaunchScreen.storyboard */; };
+		6AA83D491D49DFFC00B36668 /* GiftExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D471D49DFFC00B36668 /* GiftExchange.swift */; };
+		6AA83D4C1D49E1F800B36668 /* ParticipantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D4B1D49E1F800B36668 /* ParticipantTableViewController.swift */; };
+		6AA83D531D49E4BA00B36668 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6AA83D551D49E4BA00B36668 /* Localizable.strings */; };
+		6AA83D591D49E9F300B36668 /* ActionControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D581D49E9F300B36668 /* ActionControllerBuilder.swift */; };
+		6AA83D5B1D4A8D3B00B36668 /* RollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D5A1D4A8D3B00B36668 /* RollViewController.swift */; };
+		6AA83D5D1D4A8ED400B36668 /* BeginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D5C1D4A8ED400B36668 /* BeginButton.swift */; };
+		6AA83D5F1D4AA5D400B36668 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D5E1D4AA5D400B36668 /* TabBarViewController.swift */; };
+		6AA83D611D4AA90000B36668 /* ViewChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D601D4AA90000B36668 /* ViewChoiceViewController.swift */; };
+		6AA83D631D4AAC9A00B36668 /* ChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D621D4AAC9A00B36668 /* ChoiceTableViewController.swift */; };
+		6AA83D651D4BED3A00B36668 /* ChoicePopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D641D4BED3A00B36668 /* ChoicePopOverViewController.swift */; };
+		6AA83D671D4C01C200B36668 /* ChoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D661D4C01C200B36668 /* ChoiceTableViewCell.swift */; };
+		6AA83D691D4C079200B36668 /* ChoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AA83D681D4C079200B36668 /* ChoiceCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A7ECEF71D4DC0EB00D29DD3 /* RulesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesTableViewController.swift; sourceTree = "<group>"; };
 		6AA83D2C1D49DC1F00B36668 /* GiftExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiftExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AA83D2F1D49DC1F00B36668 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6AA83D311D49DC1F00B36668 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		6AA83D331D49DC1F00B36668 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		6AA83D361D49DC1F00B36668 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6AA83D381D49DC1F00B36668 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6AA83D3B1D49DC1F00B36668 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6AA83D3D1D49DC1F00B36668 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AA83D471D49DFFC00B36668 /* GiftExchange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftExchange.swift; sourceTree = "<group>"; };
+		6AA83D4B1D49E1F800B36668 /* ParticipantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantTableViewController.swift; sourceTree = "<group>"; };
+		6AA83D511D49E4A600B36668 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/Main.strings"; sourceTree = "<group>"; };
+		6AA83D521D49E4A600B36668 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		6AA83D541D49E4BA00B36668 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6AA83D561D49E4CF00B36668 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6AA83D571D49E4D100B36668 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		6AA83D581D49E9F300B36668 /* ActionControllerBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionControllerBuilder.swift; sourceTree = "<group>"; };
+		6AA83D5A1D4A8D3B00B36668 /* RollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollViewController.swift; sourceTree = "<group>"; };
+		6AA83D5C1D4A8ED400B36668 /* BeginButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeginButton.swift; sourceTree = "<group>"; };
+		6AA83D5E1D4AA5D400B36668 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		6AA83D601D4AA90000B36668 /* ViewChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewChoiceViewController.swift; sourceTree = "<group>"; };
+		6AA83D621D4AAC9A00B36668 /* ChoiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceTableViewController.swift; sourceTree = "<group>"; };
+		6AA83D641D4BED3A00B36668 /* ChoicePopOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoicePopOverViewController.swift; sourceTree = "<group>"; };
+		6AA83D661D4C01C200B36668 /* ChoiceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceTableViewCell.swift; sourceTree = "<group>"; };
+		6AA83D681D4C079200B36668 /* ChoiceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChoiceCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +83,23 @@
 			isa = PBXGroup;
 			children = (
 				6AA83D2F1D49DC1F00B36668 /* AppDelegate.swift */,
-				6AA83D311D49DC1F00B36668 /* FirstViewController.swift */,
-				6AA83D331D49DC1F00B36668 /* SecondViewController.swift */,
+				6AA83D5E1D4AA5D400B36668 /* TabBarViewController.swift */,
+				6AA83D4B1D49E1F800B36668 /* ParticipantTableViewController.swift */,
+				6A7ECEF71D4DC0EB00D29DD3 /* RulesTableViewController.swift */,
+				6AA83D5A1D4A8D3B00B36668 /* RollViewController.swift */,
+				6AA83D601D4AA90000B36668 /* ViewChoiceViewController.swift */,
+				6AA83D621D4AAC9A00B36668 /* ChoiceTableViewController.swift */,
+				6AA83D661D4C01C200B36668 /* ChoiceTableViewCell.swift */,
+				6AA83D681D4C079200B36668 /* ChoiceCell.xib */,
+				6AA83D641D4BED3A00B36668 /* ChoicePopOverViewController.swift */,
+				6AA83D5C1D4A8ED400B36668 /* BeginButton.swift */,
+				6AA83D471D49DFFC00B36668 /* GiftExchange.swift */,
+				6AA83D581D49E9F300B36668 /* ActionControllerBuilder.swift */,
 				6AA83D351D49DC1F00B36668 /* Main.storyboard */,
-				6AA83D381D49DC1F00B36668 /* Assets.xcassets */,
 				6AA83D3A1D49DC1F00B36668 /* LaunchScreen.storyboard */,
+				6AA83D381D49DC1F00B36668 /* Assets.xcassets */,
 				6AA83D3D1D49DC1F00B36668 /* Info.plist */,
+				6AA83D551D49E4BA00B36668 /* Localizable.strings */,
 			);
 			path = GiftExchange;
 			sourceTree = "<group>";
@@ -100,6 +137,7 @@
 					6AA83D2B1D49DC1F00B36668 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = XGD4D4ZJ33;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -110,6 +148,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"fr-CA",
 			);
 			mainGroup = 6AA83D231D49DC1F00B36668;
 			productRefGroup = 6AA83D2D1D49DC1F00B36668 /* Products */;
@@ -127,7 +166,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AA83D3C1D49DC1F00B36668 /* LaunchScreen.storyboard in Resources */,
+				6AA83D531D49E4BA00B36668 /* Localizable.strings in Resources */,
 				6AA83D391D49DC1F00B36668 /* Assets.xcassets in Resources */,
+				6AA83D691D4C079200B36668 /* ChoiceCell.xib in Resources */,
 				6AA83D371D49DC1F00B36668 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,9 +180,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AA83D341D49DC1F00B36668 /* SecondViewController.swift in Sources */,
 				6AA83D301D49DC1F00B36668 /* AppDelegate.swift in Sources */,
-				6AA83D321D49DC1F00B36668 /* FirstViewController.swift in Sources */,
+				6AA83D671D4C01C200B36668 /* ChoiceTableViewCell.swift in Sources */,
+				6AA83D591D49E9F300B36668 /* ActionControllerBuilder.swift in Sources */,
+				6AA83D5B1D4A8D3B00B36668 /* RollViewController.swift in Sources */,
+				6AA83D5D1D4A8ED400B36668 /* BeginButton.swift in Sources */,
+				6AA83D631D4AAC9A00B36668 /* ChoiceTableViewController.swift in Sources */,
+				6AA83D5F1D4AA5D400B36668 /* TabBarViewController.swift in Sources */,
+				6AA83D4C1D49E1F800B36668 /* ParticipantTableViewController.swift in Sources */,
+				6AA83D651D4BED3A00B36668 /* ChoicePopOverViewController.swift in Sources */,
+				6AA83D611D4AA90000B36668 /* ViewChoiceViewController.swift in Sources */,
+				6AA83D491D49DFFC00B36668 /* GiftExchange.swift in Sources */,
+				6A7ECEF81D4DC0EB00D29DD3 /* RulesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +202,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6AA83D361D49DC1F00B36668 /* Base */,
+				6AA83D511D49E4A600B36668 /* fr-CA */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -160,8 +211,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				6AA83D3B1D49DC1F00B36668 /* Base */,
+				6AA83D521D49E4A600B36668 /* fr-CA */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6AA83D551D49E4BA00B36668 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6AA83D541D49E4BA00B36668 /* en */,
+				6AA83D561D49E4CF00B36668 /* Base */,
+				6AA83D571D49E4D100B36668 /* fr-CA */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -260,6 +322,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.geniusprod.GiftExchange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -271,6 +334,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.geniusprod.GiftExchange;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -293,6 +357,7 @@
 				6AA83D421D49DC1F00B36668 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,40 @@
+/* 
+  Localizable.strings
+  GiftExchange
+
+  Created by Benoît Lévesque on 2016-07-28.
+  Copyright © 2016 Benoît Lévesque. All rights reserved.
+*/
+
+"Add a participant" = "Ajouter un participant";
+"First name and last name require." = "Prénom et nom de famille requis.";
+"First name" = "Prénom";
+"Last name" = "Nom de famille";
+"NIP" = "NIP";
+"Add" = "Ajouter";
+"Cancel" = "Annuler";
+
+" can't pick..." = " ne peut piger...";
+
+"Close" = "Fermer";
+"You picked..." = "Vous avez pigé...";
+"Locked" = "Verrouiller";
+"Re-enter your nip." = "Entrez votre nip à nouveau.";
+
+"Protected" = "Protéger";
+"Enter your NIP" = "Entrez le NIP";
+"Enter" = "Entrer";
+
+"Warning" = "Attention";
+"First name and last name must not be empty." = "Le prénom et le nom de famille ne doivent pas être vides.";
+
+"Draw lots" = "Tirez au sort";
+" participants are registered." = " participants sont enregistrés.";
+" participant is registered." = " participant est enregistré.";
+"Register 3 or more participants. Currently, " = "Enregistrez 3 participants ou plus. Présentement, ";
+"Roll !" = "Lancez !";
+
+"Roll finished !" = "Pige terminé !";
+"All set up !" = "C'est prêt !";
+"Continue" = "Continuer";
+"Not secret" = "Non secret";
