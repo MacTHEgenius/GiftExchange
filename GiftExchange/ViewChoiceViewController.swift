@@ -10,7 +10,7 @@ import UIKit
 
 class ViewChoiceViewController: UIViewController {
 	
-	var exchange: Exchange!
+//	var exchange: Exchange!
 	var exchangeDone: [Participant:Participant]!
 	
 	@IBOutlet weak var titleLabel: UILabel!
@@ -25,7 +25,7 @@ class ViewChoiceViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-		self.exchangeDone = self.exchange.roll()
+//		self.exchangeDone = self.exchange.roll()
 		
 		self.title = "Roll finished !"
 		self.titleLabel.text = "All set up !"

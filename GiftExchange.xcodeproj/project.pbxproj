@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		6A2203DB1E8A00F900D92FBD /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2203DA1E8A00F900D92FBD /* Participant.swift */; };
+		6A2203DD1E8A023100D92FBD /* ParticipantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2203DC1E8A023100D92FBD /* ParticipantController.swift */; };
+		6A2203DF1E8A056900D92FBD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2203DE1E8A056900D92FBD /* Utils.swift */; };
+		6A2203E11E8A05C900D92FBD /* SwapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2203E01E8A05C900D92FBD /* SwapService.swift */; };
 		6A7ECEF81D4DC0EB00D29DD3 /* RulesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7ECEF71D4DC0EB00D29DD3 /* RulesTableViewController.swift */; };
 		6AA83D301D49DC1F00B36668 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D2F1D49DC1F00B36668 /* AppDelegate.swift */; };
 		6AA83D371D49DC1F00B36668 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA83D351D49DC1F00B36668 /* Main.storyboard */; };
 		6AA83D391D49DC1F00B36668 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AA83D381D49DC1F00B36668 /* Assets.xcassets */; };
 		6AA83D3C1D49DC1F00B36668 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA83D3A1D49DC1F00B36668 /* LaunchScreen.storyboard */; };
-		6AA83D491D49DFFC00B36668 /* GiftExchange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D471D49DFFC00B36668 /* GiftExchange.swift */; };
 		6AA83D4C1D49E1F800B36668 /* ParticipantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D4B1D49E1F800B36668 /* ParticipantTableViewController.swift */; };
 		6AA83D531D49E4BA00B36668 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6AA83D551D49E4BA00B36668 /* Localizable.strings */; };
 		6AA83D591D49E9F300B36668 /* ActionControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D581D49E9F300B36668 /* ActionControllerBuilder.swift */; };
@@ -29,6 +31,9 @@
 
 /* Begin PBXFileReference section */
 		6A2203DA1E8A00F900D92FBD /* Participant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Participant.swift; path = Model/Participant.swift; sourceTree = "<group>"; };
+		6A2203DC1E8A023100D92FBD /* ParticipantController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParticipantController.swift; path = Controller/ParticipantController.swift; sourceTree = "<group>"; };
+		6A2203DE1E8A056900D92FBD /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Model/Utils.swift; sourceTree = "<group>"; };
+		6A2203E01E8A05C900D92FBD /* SwapService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwapService.swift; path = Controller/Services/SwapService.swift; sourceTree = "<group>"; };
 		6A7ECEF71D4DC0EB00D29DD3 /* RulesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesTableViewController.swift; sourceTree = "<group>"; };
 		6AA83D2C1D49DC1F00B36668 /* GiftExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiftExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AA83D2F1D49DC1F00B36668 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,7 +41,6 @@
 		6AA83D381D49DC1F00B36668 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6AA83D3B1D49DC1F00B36668 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6AA83D3D1D49DC1F00B36668 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6AA83D471D49DFFC00B36668 /* GiftExchange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftExchange.swift; sourceTree = "<group>"; };
 		6AA83D4B1D49E1F800B36668 /* ParticipantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantTableViewController.swift; sourceTree = "<group>"; };
 		6AA83D511D49E4A600B36668 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/Main.strings"; sourceTree = "<group>"; };
 		6AA83D521D49E4A600B36668 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -68,8 +72,8 @@
 		6A2203D61E8A008B00D92FBD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6AA83D471D49DFFC00B36668 /* GiftExchange.swift */,
 				6A2203DA1E8A00F900D92FBD /* Participant.swift */,
+				6A2203DE1E8A056900D92FBD /* Utils.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -89,6 +93,8 @@
 		6A2203D81E8A00AE00D92FBD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6A2203DC1E8A023100D92FBD /* ParticipantController.swift */,
+				6A2203E21E8A05CC00D92FBD /* Services */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -96,8 +102,17 @@
 		6A2203D91E8A00BD00D92FBD /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				6AA83D2F1D49DC1F00B36668 /* AppDelegate.swift */,
 			);
 			name = ViewController;
+			sourceTree = "<group>";
+		};
+		6A2203E21E8A05CC00D92FBD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6A2203E01E8A05C900D92FBD /* SwapService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		6AA83D231D49DC1F00B36668 = {
@@ -123,7 +138,6 @@
 				6A2203D81E8A00AE00D92FBD /* Controller */,
 				6A2203D91E8A00BD00D92FBD /* ViewController */,
 				6A2203D71E8A00A800D92FBD /* View */,
-				6AA83D2F1D49DC1F00B36668 /* AppDelegate.swift */,
 				6AA83D5E1D4AA5D400B36668 /* TabBarViewController.swift */,
 				6AA83D4B1D49E1F800B36668 /* ParticipantTableViewController.swift */,
 				6A7ECEF71D4DC0EB00D29DD3 /* RulesTableViewController.swift */,
@@ -218,15 +232,17 @@
 				6AA83D301D49DC1F00B36668 /* AppDelegate.swift in Sources */,
 				6AA83D671D4C01C200B36668 /* ChoiceTableViewCell.swift in Sources */,
 				6AA83D591D49E9F300B36668 /* ActionControllerBuilder.swift in Sources */,
+				6A2203DF1E8A056900D92FBD /* Utils.swift in Sources */,
+				6A2203E11E8A05C900D92FBD /* SwapService.swift in Sources */,
 				6AA83D5B1D4A8D3B00B36668 /* RollViewController.swift in Sources */,
 				6A2203DB1E8A00F900D92FBD /* Participant.swift in Sources */,
 				6AA83D5D1D4A8ED400B36668 /* BeginButton.swift in Sources */,
+				6A2203DD1E8A023100D92FBD /* ParticipantController.swift in Sources */,
 				6AA83D631D4AAC9A00B36668 /* ChoiceTableViewController.swift in Sources */,
 				6AA83D5F1D4AA5D400B36668 /* TabBarViewController.swift in Sources */,
 				6AA83D4C1D49E1F800B36668 /* ParticipantTableViewController.swift in Sources */,
 				6AA83D651D4BED3A00B36668 /* ChoicePopOverViewController.swift in Sources */,
 				6AA83D611D4AA90000B36668 /* ViewChoiceViewController.swift in Sources */,
-				6AA83D491D49DFFC00B36668 /* GiftExchange.swift in Sources */,
 				6A7ECEF81D4DC0EB00D29DD3 /* RulesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

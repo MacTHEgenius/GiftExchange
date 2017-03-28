@@ -78,8 +78,8 @@ class RollViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
 		if let newVC = segue.destination as? ViewChoiceViewController {
-			newVC.exchange = Exchange()
-			newVC.exchange.participants = self.participants
+//			newVC.exchange = Exchange()
+//			newVC.exchange.participants = self.participants
 		}
     }
 
