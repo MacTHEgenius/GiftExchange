@@ -8,15 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		6A2203DB1E8A00F900D92FBD /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2203DA1E8A00F900D92FBD /* Participant.swift */; };
-		6A2203DD1E8A023100D92FBD /* ParticipantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2203DC1E8A023100D92FBD /* ParticipantController.swift */; };
+		6A2203DD1E8A023100D92FBD /* ParticipantsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2203DC1E8A023100D92FBD /* ParticipantsController.swift */; };
 		6A2203DF1E8A056900D92FBD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2203DE1E8A056900D92FBD /* Utils.swift */; };
 		6A2203E11E8A05C900D92FBD /* SwapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2203E01E8A05C900D92FBD /* SwapService.swift */; };
-		6A7ECEF81D4DC0EB00D29DD3 /* RulesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7ECEF71D4DC0EB00D29DD3 /* RulesTableViewController.swift */; };
+		6A2203E41E8A0B0A00D92FBD /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2203E31E8A0B0A00D92FBD /* TableViewDataSource.swift */; };
+		6A2203E71E8A0C1900D92FBD /* ParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2203E61E8A0C1900D92FBD /* ParticipantCell.swift */; };
+		6A2203E91E8A11AD00D92FBD /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2203E81E8A11AD00D92FBD /* TableViewDelegate.swift */; };
+		6A7ECEF81D4DC0EB00D29DD3 /* ParticipantSetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7ECEF71D4DC0EB00D29DD3 /* ParticipantSetUpViewController.swift */; };
+		6A84E10F1EA2C9B500E31073 /* ParticipantSetUpDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A84E10E1EA2C9B500E31073 /* ParticipantSetUpDataSource.swift */; };
 		6AA83D301D49DC1F00B36668 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D2F1D49DC1F00B36668 /* AppDelegate.swift */; };
 		6AA83D371D49DC1F00B36668 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA83D351D49DC1F00B36668 /* Main.storyboard */; };
 		6AA83D391D49DC1F00B36668 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6AA83D381D49DC1F00B36668 /* Assets.xcassets */; };
 		6AA83D3C1D49DC1F00B36668 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AA83D3A1D49DC1F00B36668 /* LaunchScreen.storyboard */; };
-		6AA83D4C1D49E1F800B36668 /* ParticipantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D4B1D49E1F800B36668 /* ParticipantTableViewController.swift */; };
+		6AA83D4C1D49E1F800B36668 /* ParticipantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D4B1D49E1F800B36668 /* ParticipantsTableViewController.swift */; };
 		6AA83D531D49E4BA00B36668 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6AA83D551D49E4BA00B36668 /* Localizable.strings */; };
 		6AA83D591D49E9F300B36668 /* ActionControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D581D49E9F300B36668 /* ActionControllerBuilder.swift */; };
 		6AA83D5B1D4A8D3B00B36668 /* RollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D5A1D4A8D3B00B36668 /* RollViewController.swift */; };
@@ -27,21 +31,31 @@
 		6AA83D651D4BED3A00B36668 /* ChoicePopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D641D4BED3A00B36668 /* ChoicePopOverViewController.swift */; };
 		6AA83D671D4C01C200B36668 /* ChoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D661D4C01C200B36668 /* ChoiceTableViewCell.swift */; };
 		6AA83D691D4C079200B36668 /* ChoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AA83D681D4C079200B36668 /* ChoiceCell.xib */; };
+		6AB960CE1EA2CF97004EF427 /* ParticipantCanPickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB960CD1EA2CF97004EF427 /* ParticipantCanPickCell.swift */; };
+		6AB960D01EA2D345004EF427 /* ParticipantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB960CF1EA2D345004EF427 /* ParticipantController.swift */; };
+		6AB960D21EA323AF004EF427 /* ParticipantSetUpDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB960D11EA323AF004EF427 /* ParticipantSetUpDelegate.swift */; };
+		6AB960D81EA5A94D004EF427 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB960D71EA5A94D004EF427 /* InfoCell.swift */; };
+		6AB960DA1EA83B6B004EF427 /* CellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB960D91EA83B6B004EF427 /* CellBuilder.swift */; };
+		6AB960E01EA865E0004EF427 /* NipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB960DF1EA865E0004EF427 /* NipCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6A2203DA1E8A00F900D92FBD /* Participant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Participant.swift; path = Model/Participant.swift; sourceTree = "<group>"; };
-		6A2203DC1E8A023100D92FBD /* ParticipantController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParticipantController.swift; path = Controller/ParticipantController.swift; sourceTree = "<group>"; };
+		6A2203DC1E8A023100D92FBD /* ParticipantsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParticipantsController.swift; path = Controller/ParticipantsController.swift; sourceTree = "<group>"; };
 		6A2203DE1E8A056900D92FBD /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Model/Utils.swift; sourceTree = "<group>"; };
 		6A2203E01E8A05C900D92FBD /* SwapService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwapService.swift; path = Controller/Services/SwapService.swift; sourceTree = "<group>"; };
-		6A7ECEF71D4DC0EB00D29DD3 /* RulesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesTableViewController.swift; sourceTree = "<group>"; };
+		6A2203E31E8A0B0A00D92FBD /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewDataSource.swift; path = ViewController/TableView/TableViewDataSource.swift; sourceTree = "<group>"; };
+		6A2203E61E8A0C1900D92FBD /* ParticipantCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParticipantCell.swift; path = ViewController/TableView/ParticipantCell.swift; sourceTree = "<group>"; };
+		6A2203E81E8A11AD00D92FBD /* TableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewDelegate.swift; path = ViewController/TableView/TableViewDelegate.swift; sourceTree = "<group>"; };
+		6A7ECEF71D4DC0EB00D29DD3 /* ParticipantSetUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantSetUpViewController.swift; sourceTree = "<group>"; };
+		6A84E10E1EA2C9B500E31073 /* ParticipantSetUpDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParticipantSetUpDataSource.swift; path = ViewController/ParticipantSetUp/ParticipantSetUpDataSource.swift; sourceTree = "<group>"; };
 		6AA83D2C1D49DC1F00B36668 /* GiftExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiftExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AA83D2F1D49DC1F00B36668 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6AA83D361D49DC1F00B36668 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6AA83D381D49DC1F00B36668 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6AA83D3B1D49DC1F00B36668 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6AA83D3D1D49DC1F00B36668 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6AA83D4B1D49E1F800B36668 /* ParticipantTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantTableViewController.swift; sourceTree = "<group>"; };
+		6AA83D4B1D49E1F800B36668 /* ParticipantsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantsTableViewController.swift; sourceTree = "<group>"; };
 		6AA83D511D49E4A600B36668 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/Main.strings"; sourceTree = "<group>"; };
 		6AA83D521D49E4A600B36668 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		6AA83D541D49E4BA00B36668 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -56,6 +70,12 @@
 		6AA83D641D4BED3A00B36668 /* ChoicePopOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoicePopOverViewController.swift; sourceTree = "<group>"; };
 		6AA83D661D4C01C200B36668 /* ChoiceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceTableViewCell.swift; sourceTree = "<group>"; };
 		6AA83D681D4C079200B36668 /* ChoiceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChoiceCell.xib; sourceTree = "<group>"; };
+		6AB960CD1EA2CF97004EF427 /* ParticipantCanPickCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParticipantCanPickCell.swift; path = ViewController/ParticipantSetUp/ParticipantCanPickCell.swift; sourceTree = "<group>"; };
+		6AB960CF1EA2D345004EF427 /* ParticipantController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParticipantController.swift; path = Controller/ParticipantController.swift; sourceTree = "<group>"; };
+		6AB960D11EA323AF004EF427 /* ParticipantSetUpDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParticipantSetUpDelegate.swift; path = ViewController/ParticipantSetUp/ParticipantSetUpDelegate.swift; sourceTree = "<group>"; };
+		6AB960D71EA5A94D004EF427 /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoCell.swift; path = ViewController/ParticipantSetUp/InfoCell.swift; sourceTree = "<group>"; };
+		6AB960D91EA83B6B004EF427 /* CellBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellBuilder.swift; sourceTree = "<group>"; };
+		6AB960DF1EA865E0004EF427 /* NipCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NipCell.swift; path = ViewController/ParticipantSetUp/NipCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +113,8 @@
 		6A2203D81E8A00AE00D92FBD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6A2203DC1E8A023100D92FBD /* ParticipantController.swift */,
+				6A2203DC1E8A023100D92FBD /* ParticipantsController.swift */,
+				6AB960CF1EA2D345004EF427 /* ParticipantController.swift */,
 				6A2203E21E8A05CC00D92FBD /* Services */,
 			);
 			name = Controller;
@@ -103,6 +124,9 @@
 			isa = PBXGroup;
 			children = (
 				6AA83D2F1D49DC1F00B36668 /* AppDelegate.swift */,
+				6A2203E51E8A0B0F00D92FBD /* ParticipantsTableView */,
+				6A2203EB1E8B2A2D00D92FBD /* Participant */,
+				6A2203EA1E8A181B00D92FBD /* Components */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -113,6 +137,35 @@
 				6A2203E01E8A05C900D92FBD /* SwapService.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		6A2203E51E8A0B0F00D92FBD /* ParticipantsTableView */ = {
+			isa = PBXGroup;
+			children = (
+				6AA83D4B1D49E1F800B36668 /* ParticipantsTableViewController.swift */,
+				6A2203E31E8A0B0A00D92FBD /* TableViewDataSource.swift */,
+				6A2203E81E8A11AD00D92FBD /* TableViewDelegate.swift */,
+				6A2203E61E8A0C1900D92FBD /* ParticipantCell.swift */,
+			);
+			name = ParticipantsTableView;
+			sourceTree = "<group>";
+		};
+		6A2203EA1E8A181B00D92FBD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		6A2203EB1E8B2A2D00D92FBD /* Participant */ = {
+			isa = PBXGroup;
+			children = (
+				6A7ECEF71D4DC0EB00D29DD3 /* ParticipantSetUpViewController.swift */,
+				6A84E10E1EA2C9B500E31073 /* ParticipantSetUpDataSource.swift */,
+				6AB960D11EA323AF004EF427 /* ParticipantSetUpDelegate.swift */,
+				6AB960DE1EA865BE004EF427 /* Cells */,
+			);
+			name = Participant;
 			sourceTree = "<group>";
 		};
 		6AA83D231D49DC1F00B36668 = {
@@ -135,12 +188,11 @@
 			isa = PBXGroup;
 			children = (
 				6A2203D61E8A008B00D92FBD /* Model */,
+				6AB960DB1EA8575A004EF427 /* Service */,
 				6A2203D81E8A00AE00D92FBD /* Controller */,
 				6A2203D91E8A00BD00D92FBD /* ViewController */,
 				6A2203D71E8A00A800D92FBD /* View */,
 				6AA83D5E1D4AA5D400B36668 /* TabBarViewController.swift */,
-				6AA83D4B1D49E1F800B36668 /* ParticipantTableViewController.swift */,
-				6A7ECEF71D4DC0EB00D29DD3 /* RulesTableViewController.swift */,
 				6AA83D5A1D4A8D3B00B36668 /* RollViewController.swift */,
 				6AA83D601D4AA90000B36668 /* ViewChoiceViewController.swift */,
 				6AA83D621D4AAC9A00B36668 /* ChoiceTableViewController.swift */,
@@ -151,6 +203,24 @@
 				6AA83D581D49E9F300B36668 /* ActionControllerBuilder.swift */,
 			);
 			path = GiftExchange;
+			sourceTree = "<group>";
+		};
+		6AB960DB1EA8575A004EF427 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		6AB960DE1EA865BE004EF427 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6AB960CD1EA2CF97004EF427 /* ParticipantCanPickCell.swift */,
+				6AB960D71EA5A94D004EF427 /* InfoCell.swift */,
+				6AB960D91EA83B6B004EF427 /* CellBuilder.swift */,
+				6AB960DF1EA865E0004EF427 /* NipCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,19 +301,29 @@
 			files = (
 				6AA83D301D49DC1F00B36668 /* AppDelegate.swift in Sources */,
 				6AA83D671D4C01C200B36668 /* ChoiceTableViewCell.swift in Sources */,
+				6AB960E01EA865E0004EF427 /* NipCell.swift in Sources */,
+				6AB960D21EA323AF004EF427 /* ParticipantSetUpDelegate.swift in Sources */,
+				6AB960DA1EA83B6B004EF427 /* CellBuilder.swift in Sources */,
+				6A2203E41E8A0B0A00D92FBD /* TableViewDataSource.swift in Sources */,
+				6A2203E71E8A0C1900D92FBD /* ParticipantCell.swift in Sources */,
 				6AA83D591D49E9F300B36668 /* ActionControllerBuilder.swift in Sources */,
+				6A84E10F1EA2C9B500E31073 /* ParticipantSetUpDataSource.swift in Sources */,
 				6A2203DF1E8A056900D92FBD /* Utils.swift in Sources */,
 				6A2203E11E8A05C900D92FBD /* SwapService.swift in Sources */,
 				6AA83D5B1D4A8D3B00B36668 /* RollViewController.swift in Sources */,
 				6A2203DB1E8A00F900D92FBD /* Participant.swift in Sources */,
 				6AA83D5D1D4A8ED400B36668 /* BeginButton.swift in Sources */,
-				6A2203DD1E8A023100D92FBD /* ParticipantController.swift in Sources */,
+				6A2203DD1E8A023100D92FBD /* ParticipantsController.swift in Sources */,
 				6AA83D631D4AAC9A00B36668 /* ChoiceTableViewController.swift in Sources */,
 				6AA83D5F1D4AA5D400B36668 /* TabBarViewController.swift in Sources */,
-				6AA83D4C1D49E1F800B36668 /* ParticipantTableViewController.swift in Sources */,
+				6AA83D4C1D49E1F800B36668 /* ParticipantsTableViewController.swift in Sources */,
 				6AA83D651D4BED3A00B36668 /* ChoicePopOverViewController.swift in Sources */,
+				6AB960D81EA5A94D004EF427 /* InfoCell.swift in Sources */,
 				6AA83D611D4AA90000B36668 /* ViewChoiceViewController.swift in Sources */,
-				6A7ECEF81D4DC0EB00D29DD3 /* RulesTableViewController.swift in Sources */,
+				6AB960D01EA2D345004EF427 /* ParticipantController.swift in Sources */,
+				6A2203E91E8A11AD00D92FBD /* TableViewDelegate.swift in Sources */,
+				6A7ECEF81D4DC0EB00D29DD3 /* ParticipantSetUpViewController.swift in Sources */,
+				6AB960CE1EA2CF97004EF427 /* ParticipantCanPickCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

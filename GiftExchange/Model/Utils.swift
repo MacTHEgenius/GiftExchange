@@ -12,4 +12,18 @@ extension String {
     var localized: String {
         return NSLocalizedString(self, comment: "")
     }
+    
+    func pluralize(_ count: Int) -> String {
+        if self.characters.last == "s" {
+            if count < 2 {
+                return self.substring(to: self.endIndex)
+            }
+            return self
+        } else {
+            if count > 1 {
+                return self + "s"
+            }
+            return self
+        }
+    }
 }

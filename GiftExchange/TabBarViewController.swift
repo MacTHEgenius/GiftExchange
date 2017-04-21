@@ -10,17 +10,16 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
 	
-	var participantViewController: ParticipantTableViewController!
+	var participantViewController: ParticipantsTableViewController!
 	var rollViewController: RollViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-		self.participantViewController = self.childViewControllers[0].childViewControllers[0] as! ParticipantTableViewController
+		self.participantViewController = self.childViewControllers[0].childViewControllers[0] as! ParticipantsTableViewController
 		self.rollViewController = self.childViewControllers[1].childViewControllers[0] as! RollViewController
 		
-		self.participantViewController.title = "Add a participant".localized
+		self.participantViewController.title = "Participants"//"Add a participant".localized
 		self.rollViewController.title = "Roll !".localized
 		
 		/*
@@ -46,21 +45,5 @@ class TabBarViewController: UITabBarController {
 		*/
 		
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

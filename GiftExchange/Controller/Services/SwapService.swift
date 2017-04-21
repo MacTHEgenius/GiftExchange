@@ -10,14 +10,15 @@ import Foundation
 
 class SwapService {
     
-    private var participantController: ParticipantController
+    private var participantController: ParticipantsController
     
-    init(participantController: ParticipantController) {
+    init(participantController: ParticipantsController) {
         self.participantController = participantController
     }
     
     func roll() -> [Participant: Participant] {
-        var dispatch = [Participant: Participant]()
+        let dispatch = [Participant: Participant]()
+        /*
         var participants = self.participantController.participants
         
         for participant in participants {
@@ -54,26 +55,26 @@ class SwapService {
             }
             
             
-            ///*
-            //			if participant.cantPicked(participantPicked) {
-            //				print("wrong !")
-            //				if self.participants.count == 1 {
-            //				}
-            //				var newIndex: Int
-            //				repeat {
-            //					newIndex = Int(arc4random_uniform(UInt32(self.participants.count)))
-            //					print("Can't pick \(self.participants[newIndex]) : \(participant.cantPicked(self.participants[newIndex]))")
-            //					if participant.cantPicked(self.participants[newIndex]) {
-            //						print("nope !")
-            //						newIndex = randomIndex
-            //					} else {
-            //						participantPicked = self.participants[newIndex]
-            //						print("yes !")
-            //					}
-            //				} while randomIndex == newIndex
-            //				randomIndex = newIndex
-            //			}
-            //*/
+            /*
+            			if participant.cantPicked(participantPicked) {
+            				print("wrong !")
+            				if self.participants.count == 1 {
+            				}
+            				var newIndex: Int
+            				repeat {
+            					newIndex = Int(arc4random_uniform(UInt32(self.participants.count)))
+            					print("Can't pick \(self.participants[newIndex]) : \(participant.cantPicked(self.participants[newIndex]))")
+            					if participant.cantPicked(self.participants[newIndex]) {
+            						print("nope !")
+            						newIndex = randomIndex
+            					} else {
+            						participantPicked = self.participants[newIndex]
+            						print("yes !")
+            					}
+            				} while randomIndex == newIndex
+            				randomIndex = newIndex
+            			}
+            */
             
             
             dispatch[participant] = participantPicked
@@ -81,7 +82,7 @@ class SwapService {
             print("\(participant) picked \(participantPicked)")
             participants.remove(at: randomIndex)
         }
-        
+        */
         return dispatch
     }
     

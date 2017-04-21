@@ -10,11 +10,12 @@ import Foundation
 
 class Participant: NSObject {
     
+    private(set) var id: String
     var firstName: String
     var lastName: String?
     var nip: String?
     var chosen: Bool
-    var cantPicked: [String] = []
+    var canPicked: [String] = []
     
     var fullname: String {
         if let lastName = self.lastName {
@@ -41,6 +42,7 @@ class Participant: NSObject {
     }
     
     init(withFirstName fname: String, lastName: String = "", NIP: String?) {
+        self.id = UUID().uuidString
         self.firstName = fname
         self.lastName = lastName
         self.nip = NIP
@@ -51,10 +53,15 @@ class Participant: NSObject {
     }
     
     required init(coder aDecoder: NSCoder) {
+        self.id = ""
         self.firstName = ""
         self.lastName = nil
         self.nip = ""
         self.chosen = false
+        
+        if let id = aDecoder.decodeObject(forKey: "id") as? String {
+            self.id = id
+        }
         
         if let fname = aDecoder.decodeObject(forKey: "firstName") as? String {
             self.firstName = fname
@@ -68,27 +75,35 @@ class Participant: NSObject {
             self.nip = nip
         }
         
-        if let cantPicked = aDecoder.decodeObject(forKey: "cantPicked") as? [String] {
-            self.cantPicked = cantPicked
+        if let cantPicked = aDecoder.decodeObject(forKey: "canPicked") as? [String] {
+            self.canPicked = cantPicked
         }
         
         self.chosen = aDecoder.decodeBool(forKey: "chosen")
     }
     
     func encodeWithCoder(_ aCoder: NSCoder) {
+        aCoder.encode(self.id, forKey: "id")
         aCoder.encode(self.firstName, forKey: "firstName")
         aCoder.encode(self.lastName, forKey: "lastName")
         aCoder.encode(self.nip, forKey: "nip")
-        aCoder.encode(self.cantPicked, forKey: "cantPicked")
+        aCoder.encode(self.canPicked, forKey: "canPicked")
         aCoder.encode(self.chosen, forKey: "chosen")
     }
     
-    func cantPicked(_ participant: Participant) -> Bool {
-        return self.cantPicked.contains(participant.fullname)
+    func canPicked(_ participant: Participant) -> Bool {
+        return self.canPicked.contains(participant.id)
+    }
+    
+    func update(_ participant: Participant) {
+        self.firstName = participant.firstName
+        self.lastName = participant.lastName
+        self.canPicked = participant.canPicked
+        self.nip = participant.nip
     }
     
 }
 
 func ==(lhs: Participant, rhs: Participant) -> Bool {
-    return lhs.firstName == rhs.firstName && lhs.lastName == rhs.lastName
+    return lhs.id == rhs.id && lhs.firstName == rhs.firstName && lhs.lastName == rhs.lastName
 }

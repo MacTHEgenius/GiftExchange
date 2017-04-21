@@ -22,25 +22,12 @@ class RollViewController: UIViewController {
 //		print("Button tapped")
 	}
 	
-	// MARK: - Load
-	
-	func loadData() {
-		let ud = UserDefaults.standard
-		if let data = ud.object(forKey: ParticipantTableViewController.keyForExchangeObject) as? [Data] {
-			self.participants = data.map { data in
-				return NSKeyedUnarchiver.unarchiveObject(with: data) as! Participant
-			}
-		}
-	}
-	
 	
 	// MARK: - Override
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-		self.loadData()
+        
 //		self.title = "Roll !".localized
 		self.titleLabel.text = "Draw lots".localized
 		self.beginButton.text = "Roll !".localized
@@ -53,7 +40,6 @@ class RollViewController: UIViewController {
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
-		self.loadData()
 		if self.participants.count >= 3 {
 			self.descriptionLabel.text = "\(self.participants.count)" + " participants are registered.".localized
 			self.beginButton.setButtonEnabled(true)
