@@ -35,10 +35,23 @@ class ParticipantSetUpViewController: UITableViewController {
     
     func didTapSave(sender: UIBarButtonItem) {
         print("Save")
-        if let dataSource = self.tableViewDataSource, let fname = dataSource.firstnameCell?.value, let lname = dataSource.lastnameCell?.value, let nip = dataSource.nipCell?.value {
-            self.controller?.save(firstName: fname, lastName: lname, nip: nip)
+        guard let dataSource = self.tableViewDataSource,
+            let fname = dataSource.firstnameCell?.value,
+            let lname = dataSource.lastnameCell?.value,
+            let nip = dataSource.nipCell?.value else {
+            print("Errors (value's nil)")
+            return
         }
-        self.navigationController?.popViewController(animated: true)
+        
+        do {
+            try self.controller?.save(firstName: fname, lastName: lname, nip: nip)
+            self.navigationController?.popViewController(animated: true)
+        } catch ParticipantError.notValid(let errors) {
+            print("Validation errors", errors)
+        } catch {
+            print("wat")
+        }
+        
     }
 
 }

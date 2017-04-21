@@ -31,13 +31,21 @@ class ParticipantController {
         self.canPick[participant.id] = isPicked
     }
     
-    func save(firstName: String, lastName: String, nip: String) {
+    func save(firstName: String, lastName: String, nip: String) throws {
         let new = Participant(with: firstName, and: lastName, nip: nip, canPick: self.canPick)
-        if let p = self.participant {
-            self.parent.update(old: p, with: new)
+        
+        if new.valid {
+            if let p = self.participant {
+                self.parent.update(old: p, with: new)
+            } else {
+                self.parent.add(new)
+            }
         } else {
-            self.parent.add(new)
+            throw ParticipantError.notValid(errors: new.errors)
         }
     }
-    
+}
+
+enum ParticipantError: Error {
+    case notValid(errors: [String])
 }

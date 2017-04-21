@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Participant: NSObject {
+class Participant: NSObject, Validable {
     
     private(set) var id: String
     private(set) var firstName: String
@@ -65,6 +65,20 @@ class Participant: NSObject {
         self.lastName = participant.lastName
         self.canPick = participant.canPick
         self.nip = participant.nip
+    }
+    
+    // Model validations
+    
+    var errors: [String] = []
+    var valid: Bool {
+        self.validate()
+        return self.errors.isEmpty
+    }
+    
+    func validate() {
+        _ = Validate("firstname", of: self).presence(of: self.firstName)
+        _ = Validate("lastname", of: self).presence(of: self.lastName)
+        _ = Validate("NIP", of: self).presence(of: self.nip).length(of: self.nip, min: 4, max: 6)
     }
     
 }

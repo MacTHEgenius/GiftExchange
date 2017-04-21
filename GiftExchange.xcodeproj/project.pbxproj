@@ -37,6 +37,7 @@
 		6AB960DA1EA83B6B004EF427 /* CellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB960D91EA83B6B004EF427 /* CellBuilder.swift */; };
 		6AB960E01EA865E0004EF427 /* NipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB960DF1EA865E0004EF427 /* NipCell.swift */; };
 		6AB960E41EA9AA7B004EF427 /* ChoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB960E31EA9AA7B004EF427 /* ChoiceCell.xib */; };
+		6AB960E61EA9AC1D004EF427 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB960E51EA9AC1D004EF427 /* Validation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		6AB960D91EA83B6B004EF427 /* CellBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellBuilder.swift; sourceTree = "<group>"; };
 		6AB960DF1EA865E0004EF427 /* NipCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NipCell.swift; sourceTree = "<group>"; };
 		6AB960E31EA9AA7B004EF427 /* ChoiceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChoiceCell.xib; sourceTree = "<group>"; };
+		6AB960E51EA9AC1D004EF427 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				6A2203E01E8A05C900D92FBD /* SwapService.swift */,
+				6AB960E51EA9AC1D004EF427 /* Validation.swift */,
 			);
 			name = Service;
 			path = Services;
@@ -288,6 +291,7 @@
 				6AA83D671D4C01C200B36668 /* ChoiceTableViewCell.swift in Sources */,
 				6AB960E01EA865E0004EF427 /* NipCell.swift in Sources */,
 				6AB960D21EA323AF004EF427 /* ParticipantSetUpDelegate.swift in Sources */,
+				6AB960E61EA9AC1D004EF427 /* Validation.swift in Sources */,
 				6AB960DA1EA83B6B004EF427 /* CellBuilder.swift in Sources */,
 				6A2203E41E8A0B0A00D92FBD /* ParticipantsTableViewDataSource.swift in Sources */,
 				6A2203E71E8A0C1900D92FBD /* ParticipantCell.swift in Sources */,
