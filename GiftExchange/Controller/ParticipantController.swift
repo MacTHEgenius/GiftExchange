@@ -11,32 +11,28 @@ import Foundation
 class ParticipantController {
     
     let parent: ParticipantsController
-    
     let participant: Participant?
+    
+    private var canPick: [String:Bool] = [:]
     
     init(_ participant: Participant? = nil, parent: ParticipantsController) {
         self.participant = participant
         self.parent = parent
+        if let participant = self.participant {
+            self.canPick = participant.canPick.reduce(self.canPick) { (dict, participantId) -> [String:Bool] in
+                var d = dict
+                d[participantId] = true
+                return d
+            }
+        }
     }
     
-    func pick(_ picked: Participant) {
-        // ID
-//        if !self.participant!.cantPicked(picked) {
-//            self.participant!.cantPicked.append(picked.fullname)
-//        }
+    func pick(_ participant: Participant, isPicked: Bool) {
+        self.canPick[participant.id] = isPicked
     }
     
-    func unpick(_ unpicked: Participant) {
-        // ID
-//        if self.participant!.cantPicked(unpicked) {
-//            let index = self.participant!.cantPicked.index(of: unpicked.fullname)
-//            self.participant!.cantPicked.remove(at: index!)
-//        }
-    }
-    
-    func save(firstName: String, lastName: String, nip: String, canPick: [String:Bool]) {
-        print(firstName, lastName, nip, canPick)
-        let new = Participant(withFirstName: firstName, lastName: lastName, NIP: nip)
+    func save(firstName: String, lastName: String, nip: String) {
+        let new = Participant(with: firstName, and: lastName, nip: nip, canPick: self.canPick)
         if let p = self.participant {
             self.parent.update(old: p, with: new)
         } else {

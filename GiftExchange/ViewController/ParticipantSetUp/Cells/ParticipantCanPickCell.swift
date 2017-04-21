@@ -18,10 +18,15 @@ class ParticipantCanPickCell: UITableViewCell {
         }
     }
     
-    var check: Bool = true {
+    var check: Bool = false {
         didSet {
             self.accessoryType = self.check ? .checkmark : .none
         }
+    }
+    
+    func select() {
+        self.check = !self.check
+        self.isSelected = false
     }
 
 }

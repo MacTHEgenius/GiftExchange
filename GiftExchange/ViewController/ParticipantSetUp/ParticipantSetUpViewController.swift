@@ -36,13 +36,7 @@ class ParticipantSetUpViewController: UITableViewController {
     func didTapSave(sender: UIBarButtonItem) {
         print("Save")
         if let dataSource = self.tableViewDataSource, let fname = dataSource.firstnameCell?.value, let lname = dataSource.lastnameCell?.value, let nip = dataSource.nipCell?.value {
-            
-            let canPick = dataSource.canPickCells.reduce([String:Bool](), { (dict, cell) -> [String:Bool] in
-                var d = dict
-                d[cell.name!] = cell.check
-                return dict
-            })
-            self.controller?.save(firstName: fname, lastName: lname, nip: nip, canPick: canPick)
+            self.controller?.save(firstName: fname, lastName: lname, nip: nip)
         }
         self.navigationController?.popViewController(animated: true)
     }

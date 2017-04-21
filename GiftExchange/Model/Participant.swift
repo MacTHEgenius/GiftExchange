@@ -11,74 +11,39 @@ import Foundation
 class Participant: NSObject {
     
     private(set) var id: String
-    var firstName: String
-    var lastName: String?
-    var nip: String?
-    var chosen: Bool
-    var canPicked: [String] = []
+    private(set) var firstName: String
+    private(set) var lastName: String
+    private(set) var nip: String
+    private(set) var chosen: Bool
+    private(set) var canPick: [String]
     
     var fullname: String {
-        if let lastName = self.lastName {
-            return "\(self.firstName) \(lastName)"
-        } else {
-            return self.firstName
-        }
+        return "\(self.firstName) \(lastName)"
     }
     
     override var description: String {
-        var lname: String = ""
-        if let lastName = self.lastName {
-            lname = lastName
-        }
-        return self.firstName + " " + lname
+        return "<\(self.id), \(self.fullname)>"
     }
     
     override var hashValue: Int {
-        var hashValue: Int = "\(self.firstName), \(chosen)".hashValue
-        if let lname = self.lastName {
-            hashValue = "\(self.firstName) \(lname), \(chosen)".hashValue
-        }
-        return hashValue
+        return self.id.hashValue
     }
     
-    init(withFirstName fname: String, lastName: String = "", NIP: String?) {
+    init(with firstname: String, and lastName: String, nip: String, canPick: [String:Bool] = [:]) {
         self.id = UUID().uuidString
-        self.firstName = fname
+        self.firstName = firstname
         self.lastName = lastName
-        self.nip = NIP
+        self.nip = nip
         self.chosen = false
-        if lastName.isEmpty {
-            self.lastName = nil
-        }
+        self.canPick = canPick.map({ (key, value) in value ? key : "" }).filter({ (str) in str != "" })
     }
     
     required init(coder aDecoder: NSCoder) {
-        self.id = ""
-        self.firstName = ""
-        self.lastName = nil
-        self.nip = ""
-        self.chosen = false
-        
-        if let id = aDecoder.decodeObject(forKey: "id") as? String {
-            self.id = id
-        }
-        
-        if let fname = aDecoder.decodeObject(forKey: "firstName") as? String {
-            self.firstName = fname
-        }
-        
-        if let lname = aDecoder.decodeObject(forKey: "lastName") as? String? {
-            self.lastName = lname
-        }
-        
-        if let nip = aDecoder.decodeObject(forKey: "nip") as? String {
-            self.nip = nip
-        }
-        
-        if let cantPicked = aDecoder.decodeObject(forKey: "canPicked") as? [String] {
-            self.canPicked = cantPicked
-        }
-        
+        self.id = aDecoder.decodeObject(forKey: "id") as! String
+        self.firstName = aDecoder.decodeObject(forKey: "firstName") as! String
+        self.lastName = aDecoder.decodeObject(forKey: "lastName") as! String
+        self.nip = aDecoder.decodeObject(forKey: "nip") as! String
+        self.canPick = aDecoder.decodeObject(forKey: "canPicked") as! [String]
         self.chosen = aDecoder.decodeBool(forKey: "chosen")
     }
     
@@ -87,18 +52,18 @@ class Participant: NSObject {
         aCoder.encode(self.firstName, forKey: "firstName")
         aCoder.encode(self.lastName, forKey: "lastName")
         aCoder.encode(self.nip, forKey: "nip")
-        aCoder.encode(self.canPicked, forKey: "canPicked")
+        aCoder.encode(self.canPick, forKey: "canPicked")
         aCoder.encode(self.chosen, forKey: "chosen")
     }
     
-    func canPicked(_ participant: Participant) -> Bool {
-        return self.canPicked.contains(participant.id)
+    func canPick(_ participant: Participant) -> Bool {
+        return self.canPick.contains(participant.id)
     }
     
     func update(_ participant: Participant) {
         self.firstName = participant.firstName
         self.lastName = participant.lastName
-        self.canPicked = participant.canPicked
+        self.canPick = participant.canPick
         self.nip = participant.nip
     }
     

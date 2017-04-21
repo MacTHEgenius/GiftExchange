@@ -17,7 +17,6 @@ class ParticipantSetUpDataSource: NSObject {
     var firstnameCell: InfoCell?
     var lastnameCell: InfoCell?
     var nipCell: InfoCell?
-    var canPickCells: [ParticipantCanPickCell] = []
     
     init(_ tableView: UITableView, controller: ParticipantController) {
         self.controller = controller
@@ -86,9 +85,8 @@ extension ParticipantSetUpDataSource: UITableViewDataSource {
         let otherParticipant = self.controller.parent.participants[indexPath.row]
         cell.name = otherParticipant.fullname
         if let currentParticipant = self.controller.participant {
-            cell.check = currentParticipant.canPicked(otherParticipant)
+            cell.check = currentParticipant.canPick(otherParticipant)
         }
-        self.canPickCells.append(cell)
         
         return cell
     }

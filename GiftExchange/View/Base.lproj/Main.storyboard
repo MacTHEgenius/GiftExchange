@@ -115,21 +115,12 @@
                                     <outlet property="nameTextField" destination="SGH-dX-Svw" id="iDD-6L-XZN"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ParicipantCanPickCell" textLabel="H7C-v5-GK5" style="IBUITableViewCellStyleDefault" id="opl-He-rgN" customClass="ParticipantCanPickCell" customModule="GiftExchange" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParicipantCanPickCell" id="opl-He-rgN" customClass="ParticipantCanPickCell" customModule="GiftExchange" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="opl-He-rgN" id="j2A-Vn-7KA">
-                                    <rect key="frame" x="0.0" y="0.0" width="336" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="H7C-v5-GK5">
-                                            <rect key="frame" x="15" y="0.0" width="321" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>

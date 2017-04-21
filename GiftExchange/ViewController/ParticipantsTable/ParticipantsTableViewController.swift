@@ -18,8 +18,8 @@ class ParticipantsTableViewController: UITableViewController {
 	// MARK: - Properties
     
     var participantsController: ParticipantsController?
-    var tableViewDataSource: TableViewDataSource?
-    var tableViewDelegate: TableViewDelegate?
+    var tableViewDataSource: ParticipantsTableViewDataSource?
+    var tableViewDelegate: ParticipantsTableViewDelegate?
 	
 	// MARK: - IBActions
 	
@@ -51,8 +51,8 @@ class ParticipantsTableViewController: UITableViewController {
     override func viewDidLoad() {
 		super.viewDidLoad()
         if let participantsController = self.participantsController {
-            self.tableViewDataSource = TableViewDataSource(tableView: self.tableView, participantsController: participantsController)
-            self.tableViewDelegate = TableViewDelegate(tableView: self.tableView, participantsController: participantsController)
+            self.tableViewDataSource = ParticipantsTableViewDataSource(tableView: self.tableView, participantsController: participantsController)
+            self.tableViewDelegate = ParticipantsTableViewDelegate(tableView: self.tableView, participantsController: participantsController)
         }
     }
 	

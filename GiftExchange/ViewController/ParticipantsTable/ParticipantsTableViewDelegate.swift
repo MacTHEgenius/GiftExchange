@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewDelegate: NSObject {
+class ParticipantsTableViewDelegate: NSObject {
     
     let participantsController: ParticipantsController
     
@@ -20,7 +20,7 @@ class TableViewDelegate: NSObject {
 
 }
 
-extension TableViewDelegate: UITableViewDelegate {
+extension ParticipantsTableViewDelegate: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let count = self.participantsController.participants.count

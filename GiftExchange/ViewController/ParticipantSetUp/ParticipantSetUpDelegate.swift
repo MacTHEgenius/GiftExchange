@@ -27,19 +27,8 @@ extension ParticipantSetUpDelegate: UITableViewDelegate {
         if indexPath.section == ParticipantSetUpDataSource.Const.section - 1 {
             let cell = tableView.cellForRow(at: indexPath) as! ParticipantCanPickCell
             let participantSelected = self.controller.parent.participants[indexPath.row]
-            
-            if cell.check {
-                self.controller.pick(participantSelected)
-                cell.check = false
-            } else {
-                self.controller.unpick(participantSelected)
-                cell.check = true
-            }
-            print(cell.check)
-            cell.accessoryType = .checkmark
-            
-            
-            tableView.reloadData()            
+            cell.select()
+            self.controller.pick(participantSelected, isPicked: cell.check)
         }
     }
     

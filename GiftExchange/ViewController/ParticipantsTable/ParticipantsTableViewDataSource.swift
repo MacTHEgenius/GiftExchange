@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewDataSource: NSObject {
+class ParticipantsTableViewDataSource: NSObject {
     
     let participantsController: ParticipantsController
     
@@ -20,7 +20,7 @@ class TableViewDataSource: NSObject {
     
 }
 
-extension TableViewDataSource: UITableViewDataSource {
+extension ParticipantsTableViewDataSource: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
