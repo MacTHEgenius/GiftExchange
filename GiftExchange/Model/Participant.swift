@@ -84,5 +84,5 @@ class Participant: NSObject, Validable {
 }
 
 func ==(lhs: Participant, rhs: Participant) -> Bool {
-    return lhs.id == rhs.id && lhs.firstName == rhs.firstName && lhs.lastName == rhs.lastName
+    return lhs.id == rhs.id && lhs.firstName == rhs.firstName && lhs.lastName == rhs.lastName && lhs.nip == rhs.nip
 }
