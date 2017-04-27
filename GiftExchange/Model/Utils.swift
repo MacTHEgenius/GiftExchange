@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension String {
+public extension String {
     var localized: String {
         return NSLocalizedString(self, comment: "")
     }
@@ -16,14 +16,15 @@ extension String {
     func pluralize(_ count: Int) -> String {
         if self.characters.last == "s" {
             if count < 2 {
-                return self.substring(to: self.endIndex)
+                let index = self.index(before: self.endIndex)
+                return "\(count) \(self.substring(to: index))"
             }
-            return self
+            return "\(count) \(self)"
         } else {
             if count > 1 {
-                return self + "s"
+                return "\(count) \(self)s"
             }
-            return self
+            return "\(count) \(self)"
         }
     }
 }

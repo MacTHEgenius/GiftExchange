@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6A07245F1EAAB4E600BF50B9 /* ParticipantTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A07245E1EAAB4E600BF50B9 /* ParticipantTest.swift */; };
+		6A0724611EABD6FD00BF50B9 /* StringExtentionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0724601EABD6FD00BF50B9 /* StringExtentionTest.swift */; };
+		6A0724641EAD719900BF50B9 /* ValidationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0724631EAD719900BF50B9 /* ValidationTest.swift */; };
+		6A0724671EAD71EE00BF50B9 /* ParticipantsControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0724661EAD71EE00BF50B9 /* ParticipantsControllerTest.swift */; };
 		6A2203DB1E8A00F900D92FBD /* Participant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2203DA1E8A00F900D92FBD /* Participant.swift */; };
 		6A2203DD1E8A023100D92FBD /* ParticipantsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2203DC1E8A023100D92FBD /* ParticipantsController.swift */; };
 		6A2203DF1E8A056900D92FBD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2203DE1E8A056900D92FBD /* Utils.swift */; };
@@ -55,6 +58,9 @@
 		6A0724531EAAB44D00BF50B9 /* GiftExchangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GiftExchangeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A0724571EAAB44D00BF50B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A07245E1EAAB4E600BF50B9 /* ParticipantTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParticipantTest.swift; path = Model/ParticipantTest.swift; sourceTree = "<group>"; };
+		6A0724601EABD6FD00BF50B9 /* StringExtentionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtentionTest.swift; path = Model/StringExtentionTest.swift; sourceTree = "<group>"; };
+		6A0724631EAD719900BF50B9 /* ValidationTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValidationTest.swift; path = Service/ValidationTest.swift; sourceTree = "<group>"; };
+		6A0724661EAD71EE00BF50B9 /* ParticipantsControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParticipantsControllerTest.swift; path = Controller/ParticipantsControllerTest.swift; sourceTree = "<group>"; };
 		6A2203DA1E8A00F900D92FBD /* Participant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Participant.swift; sourceTree = "<group>"; };
 		6A2203DC1E8A023100D92FBD /* ParticipantsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantsController.swift; sourceTree = "<group>"; };
 		6A2203DE1E8A056900D92FBD /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
@@ -116,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				6A07245D1EAAB46F00BF50B9 /* Model */,
+				6A0724621EAD716100BF50B9 /* Service */,
+				6A0724651EAD71A700BF50B9 /* Controller */,
 				6A0724571EAAB44D00BF50B9 /* Info.plist */,
 			);
 			path = GiftExchangeTests;
@@ -125,8 +133,25 @@
 			isa = PBXGroup;
 			children = (
 				6A07245E1EAAB4E600BF50B9 /* ParticipantTest.swift */,
+				6A0724601EABD6FD00BF50B9 /* StringExtentionTest.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		6A0724621EAD716100BF50B9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				6A0724631EAD719900BF50B9 /* ValidationTest.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		6A0724651EAD71A700BF50B9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6A0724661EAD71EE00BF50B9 /* ParticipantsControllerTest.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		6A2203D61E8A008B00D92FBD /* Model */ = {
@@ -378,6 +403,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A07245F1EAAB4E600BF50B9 /* ParticipantTest.swift in Sources */,
+				6A0724611EABD6FD00BF50B9 /* StringExtentionTest.swift in Sources */,
+				6A0724671EAD71EE00BF50B9 /* ParticipantsControllerTest.swift in Sources */,
+				6A0724641EAD719900BF50B9 /* ValidationTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

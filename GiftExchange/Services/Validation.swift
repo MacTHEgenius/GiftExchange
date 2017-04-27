@@ -56,7 +56,7 @@ enum ValidationError: Error {
     var localizedDescription: String {
         switch self {
             case .blank(let field): return "\(field.capitalized) cannot be blank."
-        case .stringLength(let field, let short, let maxOrMin, let current): return "\(field.capitalized) is too \(short ? "short" : "long"). (You have \(current) \("character".pluralize(current)), \(short ? "minimum" : "maximum") is \(maxOrMin))"
+        case .stringLength(let field, let short, let maxOrMin, let current): return "\(field.capitalized) is too \(short ? "short" : "long"). (You have \("character".pluralize(current)), \(short ? "minimum" : "maximum") is \(maxOrMin))"
             case .custom(let msg):  return msg
         }
     }

@@ -10,19 +10,34 @@ import Foundation
 
 class ParticipantsController {
     
-    static let participantsFilePath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/participants.txt"
+    private static var participantsFilePath: String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/participants.txt"
+    private var path: String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/participants.txt"
+    
+    init() {
+    }
+    
+    init(with path: String) {
+        self.path = path
+    }
     
     var fullNames: [String] {
         return self.participants.map({ (p) -> String in p.fullname })
     }
     
     private(set) var participants: [Participant] = {
-        if let participants = NSKeyedUnarchiver.unarchiveObject(withFile: ParticipantsController.participantsFilePath) as? [Participant] {
+        if let participants = NSKeyedUnarchiver.unarchiveObject(withFile: ParticipantsController.participantsFilePath) as? [Participant]  {
             return participants
         } else {
             return []
         }
     }()
+    
+    var p: [Participant] {
+        get {
+            guard let participants = NSKeyedUnarchiver.unarchiveObject(withFile: self.path) as? [Participant] else { return [] }
+            return participants
+        }
+    }
     
     var count: Int {
         return self.participants.count
