@@ -8,6 +8,8 @@
 
 import Foundation
 
+// Hello
+
 class ParticipantsController {
     
     private static var participantsFilePath: String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/participants.txt"
