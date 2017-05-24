@@ -21,31 +21,6 @@ class ParticipantsTableViewController: UITableViewController {
     var tableViewDataSource: ParticipantsTableViewDataSource?
     var tableViewDelegate: ParticipantsTableViewDelegate?
 	
-	// MARK: - IBActions
-	
-	@IBAction func AddParticipant(_ sender: AnyObject) {
-//		let handler = { (fullName: String, nip: String) -> Void in
-//			if fullName.isEmpty || nip.isEmpty {
-//				self.dismiss(animated: true, completion: nil)
-//				let warningAlert = ActionControllerBuildDirector.constructWarning("First name and last name must not be empty.".localized)
-//				self.present(warningAlert, animated: true, completion: nil)
-//			} else {
-//				let names = fullName.components(separatedBy: "")
-//				let firstName = names[0]
-//				var lastName = ""
-//				if names.count == 2 { lastName = names[1] }
-//				let participant = Participant(withFirstName: firstName, lastName: lastName, NIP: nip)
-//				participant.cantPicked.append(participant.fullname)
-//				self.exchange.participants.append(participant)
-//				self.tableView.reloadData()
-//				
-//				self.saveData()
-//			}
-//		}
-//		let alert = ActionControllerBuildDirector.constructAddParticipant(withHandler: handler)
-//		self.present(alert, animated: true, completion: nil)
-	}
-	
 	// MARK: - View controller methods
 
     override func viewDidLoad() {
