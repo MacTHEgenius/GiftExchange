@@ -25,7 +25,7 @@ extension ParticipantsTableViewDelegate: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let count = self.participantsController.participants.count
         let label = UILabel()
-        label.text = "\(count) participant".pluralize(count) //"\(self.exchange.participants.count) participants"
+        label.text = "participant".pluralize(count)
         label.textColor = UIColor.gray
         label.center.x = tableView.center.x
         label.textAlignment = .center
