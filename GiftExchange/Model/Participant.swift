@@ -35,7 +35,9 @@ class Participant: NSObject, Validable {
         self.lastName = lastName
         self.nip = nip
         self.chosen = false
-        self.canPick = canPick.map({ (key, value) in value ? key : "" }).filter({ (str) in str != "" })
+        
+        let temp = canPick.map({ (key, value) in value ? key : "" })
+        self.canPick = temp.filter({ (str) in str != "" })
     }
     
     required init(coder aDecoder: NSCoder) {
