@@ -44,7 +44,8 @@ class ParticipantSetUpViewController: UITableViewController {
         }
         
         do {
-            try self.controller?.save(firstName: fname, lastName: lname, nip: nip)
+            let new = Participant(with: fname, and: lname, nip: nip)
+            try self.controller?.save(new)
             self.navigationController?.popViewController(animated: true)
         } catch ParticipantError.notValid(let errors) {
             let alert = AlertControllerDirector.error(with: errors)

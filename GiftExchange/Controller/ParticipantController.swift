@@ -13,7 +13,7 @@ class ParticipantController {
     let parent: ParticipantsController
     let participant: Participant?
     
-    private var canPick: [String:Bool] = [:]
+    private(set) var canPick: [String:Bool] = [:]
     
     init(_ participant: Participant? = nil, parent: ParticipantsController) {
         self.participant = participant
@@ -31,21 +31,28 @@ class ParticipantController {
         self.canPick[participant.id] = isPicked
     }
     
-    func save(firstName: String, lastName: String, nip: String) throws {
-        let new = Participant(with: firstName, and: lastName, nip: nip, canPick: self.canPick)
+    func save(_ participant: Participant) throws {
+        let temp = self.canPick.map({ (key, value) in value ? key : "" })
+        participant.canPick = temp.filter({ (str) in str != "" })
         
-        if new.valid {
+        if participant.valid {
             if let p = self.participant {
-                self.parent.update(old: p, with: new)
+                self.parent.update(old: p, with: participant)
             } else {
-                self.parent.add(new)
+                self.parent.add(participant)
             }
         } else {
-            throw ParticipantError.notValid(errors: new.errors)
+            throw ParticipantError.notValid(errors: participant.errors)
         }
     }
 }
 
-enum ParticipantError: Error {
+enum ParticipantError: Error, Equatable {
     case notValid(errors: [String])
+}
+
+func ==(lhs: ParticipantError, rhs: ParticipantError) -> Bool {
+    switch (lhs, rhs) {
+    case (.notValid(let leftErrors), .notValid(let rightErrors)): return leftErrors == rightErrors
+    }
 }

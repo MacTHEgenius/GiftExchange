@@ -15,7 +15,7 @@ class Participant: NSObject, Validable {
     private(set) var lastName: String
     private(set) var nip: String
     private(set) var chosen: Bool
-    private(set) var canPick: [String]
+    /*private(set)*/ var canPick: [String]
     
     var fullname: String {
         return "\(self.firstName) \(lastName)"
