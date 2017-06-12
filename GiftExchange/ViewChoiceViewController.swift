@@ -15,7 +15,7 @@ class ViewChoiceViewController: UIViewController {
 	
 	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var switchLabel: UILabel!
-	@IBOutlet weak var continueButton: BeginButton!
+//    @IBOutlet weak var continueButton: BeginButton!
 	@IBOutlet weak var `switch`: UISwitch!
 	
 	@IBAction func continueAction(_ sender: AnyObject) {
@@ -30,7 +30,7 @@ class ViewChoiceViewController: UIViewController {
 		self.title = "Roll finished !"
 		self.titleLabel.text = "All set up !"
 		self.switchLabel.text = "Not secret ?"
-		self.continueButton.text = "Continue"
+//        self.continueButton.text = "Continue"
     }
 
     override func didReceiveMemoryWarning() {

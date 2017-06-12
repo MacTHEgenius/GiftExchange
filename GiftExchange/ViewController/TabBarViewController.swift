@@ -11,17 +11,18 @@ import UIKit
 class TabBarViewController: UITabBarController {
 	
 	var participantViewController: ParticipantsTableViewController!
-	var rollViewController: RollViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        /*
 		self.participantViewController = self.childViewControllers[0].childViewControllers[0] as! ParticipantsTableViewController
 		self.rollViewController = self.childViewControllers[1].childViewControllers[0] as! RollViewController
 		
 		self.participantViewController.title = "Participants"//"Add a participant".localized
 		self.rollViewController.title = "Roll !".localized
-		
+        */
+ 
 		/*
 		let exchange = Exchange()
 		let p1 = Participant(withFirstName: "a", lastName: "a", NIP: "")

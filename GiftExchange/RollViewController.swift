@@ -8,6 +8,7 @@
 
 import UIKit
 
+/*
 class RollViewController: UIViewController {
 	
 	var participants: [Participant]!
@@ -19,7 +20,6 @@ class RollViewController: UIViewController {
 	// MARK: - IBAction
 	
 	@IBAction func rollAction(_ sender: AnyObject) {
-//		print("Button tapped")
 	}
 	
 	
@@ -28,28 +28,10 @@ class RollViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//		self.title = "Roll !".localized
-		self.titleLabel.text = "Draw lots".localized
-		self.beginButton.text = "Roll !".localized
-		
-//		print("Roll view controller")
-//		for p in self.participants {
-//			print(p.fullname)
-//			print(p.cantPicked)
-//		}
     }
 	
 	override func viewWillAppear(_ animated: Bool) {
-		if self.participants.count >= 3 {
-			self.descriptionLabel.text = "\(self.participants.count)" + " participants are registered.".localized
-			self.beginButton.setButtonEnabled(true)
-		} else if self.participants.count == 1 {
-			self.descriptionLabel.text = "Register 3 or more participants. Currently, ".localized + "\(self.participants.count)" + " participant is registered.".localized
-			self.beginButton.setButtonEnabled(false)
-		} else {
-			self.descriptionLabel.text = "Register 3 or more participants. Currently, ".localized + "\(self.participants.count)" + " participants are registered.".localized
-			self.beginButton.setButtonEnabled(false)
-		}
+        super.viewWillAppear(animated)
 	}
 
     override func didReceiveMemoryWarning() {
@@ -63,10 +45,11 @@ class RollViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-		if let newVC = segue.destination as? ViewChoiceViewController {
+//        if let newVC = segue.destination as? ViewChoiceViewController {
 //			newVC.exchange = Exchange()
 //			newVC.exchange.participants = self.participants
-		}
+//        }
     }
 
 }
+*/
