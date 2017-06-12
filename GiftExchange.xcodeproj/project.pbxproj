@@ -47,6 +47,9 @@
 		6AB960E41EA9AA7B004EF427 /* ChoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB960E31EA9AA7B004EF427 /* ChoiceCell.xib */; };
 		6AB960E61EA9AC1D004EF427 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB960E51EA9AC1D004EF427 /* Validation.swift */; };
 		6ADE2EB21EEDEB8B009B97DB /* HideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE2EB11EEDEB8B009B97DB /* HideView.swift */; };
+		6ADE2EB61EEE1D37009B97DB /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE2EB51EEE1D37009B97DB /* ResultsViewController.swift */; };
+		6ADE2EB81EEE1E53009B97DB /* ResultsTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE2EB71EEE1E53009B97DB /* ResultsTableViewDataSource.swift */; };
+		6ADE2EBA1EEE1E71009B97DB /* ResultsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE2EB91EEE1E71009B97DB /* ResultsTableViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +111,9 @@
 		6AB960E31EA9AA7B004EF427 /* ChoiceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChoiceCell.xib; sourceTree = "<group>"; };
 		6AB960E51EA9AC1D004EF427 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		6ADE2EB11EEDEB8B009B97DB /* HideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideView.swift; sourceTree = "<group>"; };
+		6ADE2EB51EEE1D37009B97DB /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		6ADE2EB71EEE1E53009B97DB /* ResultsTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewDataSource.swift; sourceTree = "<group>"; };
+		6ADE2EB91EEE1E71009B97DB /* ResultsTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsTableViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +209,7 @@
 			children = (
 				6AA83D2F1D49DC1F00B36668 /* AppDelegate.swift */,
 				6AA83D5E1D4AA5D400B36668 /* TabBarViewController.swift */,
+				6ADE2EB41EEE1D07009B97DB /* ResultsViewController */,
 				6A2203E51E8A0B0F00D92FBD /* ParticipantsTable */,
 				6A2203EB1E8B2A2D00D92FBD /* ParticipantSetUp */,
 			);
@@ -321,6 +328,16 @@
 				6AA83D5C1D4A8ED400B36668 /* RoundRectButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		6ADE2EB41EEE1D07009B97DB /* ResultsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6ADE2EB51EEE1D37009B97DB /* ResultsViewController.swift */,
+				6ADE2EB71EEE1E53009B97DB /* ResultsTableViewDataSource.swift */,
+				6ADE2EB91EEE1E71009B97DB /* ResultsTableViewDelegate.swift */,
+			);
+			path = ResultsViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,7 +486,9 @@
 				6AB960D21EA323AF004EF427 /* ParticipantSetUpDelegate.swift in Sources */,
 				6AB960E61EA9AC1D004EF427 /* Validation.swift in Sources */,
 				6AB960DA1EA83B6B004EF427 /* CellBuilder.swift in Sources */,
+				6ADE2EB81EEE1E53009B97DB /* ResultsTableViewDataSource.swift in Sources */,
 				6A2203E41E8A0B0A00D92FBD /* ParticipantsTableViewDataSource.swift in Sources */,
+				6ADE2EB61EEE1D37009B97DB /* ResultsViewController.swift in Sources */,
 				6A2203E71E8A0C1900D92FBD /* ParticipantCell.swift in Sources */,
 				6AA83D591D49E9F300B36668 /* ActionControllerBuilder.swift in Sources */,
 				6A84E10F1EA2C9B500E31073 /* ParticipantSetUpDataSource.swift in Sources */,
@@ -480,6 +499,7 @@
 				6AA83D5B1D4A8D3B00B36668 /* RollViewController.swift in Sources */,
 				6A2203DB1E8A00F900D92FBD /* Participant.swift in Sources */,
 				6AA83D5D1D4A8ED400B36668 /* RoundRectButton.swift in Sources */,
+				6ADE2EBA1EEE1E71009B97DB /* ResultsTableViewDelegate.swift in Sources */,
 				6A2203DD1E8A023100D92FBD /* ParticipantsController.swift in Sources */,
 				6AA83D631D4AAC9A00B36668 /* ChoiceTableViewController.swift in Sources */,
 				6AA83D5F1D4AA5D400B36668 /* TabBarViewController.swift in Sources */,

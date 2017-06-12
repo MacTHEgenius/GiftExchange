@@ -10,16 +10,16 @@ import Foundation
 
 class SwapService {
     
-    private var participantController: ParticipantsController
+    private var participantsController: ParticipantsController
     
     init(participantController: ParticipantsController) {
-        self.participantController = participantController
+        self.participantsController = participantController
     }
     
     func roll() -> [Participant: Participant] {
         let dispatch = [Participant: Participant]()
         /*
-        var participants = self.participantController.participants
+        var participants = self.participantsController.participants
         
         for participant in participants {
             var randomIndex = Int(arc4random_uniform(UInt32(participants.count)))
