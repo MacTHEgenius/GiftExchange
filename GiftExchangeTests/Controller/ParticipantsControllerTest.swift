@@ -19,12 +19,20 @@ class ParticipantsControllerTest: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        self.clear()
     }
     
     override func tearDown() {
         super.tearDown()
+        self.clear()
+    }
+    
+    private func clear() {
         if FileManager.default.fileExists(atPath: testFilePath) { // might not work
             try! FileManager.default.removeItem(atPath: testFilePath)
+            print("removed")
+        } else {
+            print("not removed")
         }
     }
     
@@ -38,14 +46,15 @@ class ParticipantsControllerTest: XCTestCase {
         XCTAssertTrue(retrieved.isEmpty, "Participants are not empty.")
     }
     
-    func testAdd() {
+    /*func testAdd() {
         let controller = ParticipantsController(with: testFilePath)
         
         controller.add(Constants.participant)
         let retrieved = controller.participants
+        print(controller.fullNames)
         
         XCTAssertEqual(retrieved.count, 1)
-    }
+    }*/
     
     func testRemove() {
         let controller = ParticipantsController(with: testFilePath)
@@ -74,6 +83,15 @@ class ParticipantsControllerTest: XCTestCase {
         let fullnames = controller.fullNames
         
         XCTAssertEqual(fullnames, [Constants.participant.fullname])
+    }
+    
+    func testFirstnames() {
+        let controller = ParticipantsController(with: testFilePath)
+        controller.add(Constants.participant)
+        
+        let firstnames = controller.firstNames
+        
+        XCTAssertEqual(firstnames, [Constants.participant.firstName])
     }
     
     func testSingleControllerForParticipant() {

@@ -24,8 +24,10 @@ class ResultsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.dataSource = ResultsTableViewDataSource(tableView: self.resultsTable)
-        self.delegate = ResultsTableViewDelegate(tableView: self.resultsTable)
+        if let controller = self.participantsController {
+            self.dataSource = ResultsTableViewDataSource(tableView: self.resultsTable, participants: controller)
+            self.delegate = ResultsTableViewDelegate(tableView: self.resultsTable)
+        }
     }
 
     override func didReceiveMemoryWarning() {
