@@ -31,10 +31,14 @@ extension ResultsTableViewDelegate: UITableViewDelegate {
         let picker = self.participants[indexPath.row]
         let picked = self.results[picker]!
         
-        let alert = PickedAlertDirector.picked(picked) { (alertAction) in
-            print("completion")
+        var completion: UIAlertController = ErrorAlertDirector.error()
+        let alert = PromptNipAlertDirectory.enterNip { (nip) in
+            self.parent.dismiss(animated: true)
+            completion = (picker.nip == nip) ? PickedAlertDirector.picked(picked, completion: nil) : ErrorAlertDirector.error(with: "Nip is incorrect.")
+            self.parent.present(completion, animated: true)
         }
-        self.parent.present(alert, animated: true, completion: nil)
+        self.parent.present(alert, animated: true)
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     

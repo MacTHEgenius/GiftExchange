@@ -11,7 +11,7 @@ import UIKit
 
 class PickedAlertDirector {
     
-    static func picked(_ participant: Participant, completion: @escaping (UIAlertAction) -> Void) -> UIAlertController {
+    static func picked(_ participant: Participant, completion: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
         let alert = UIAlertController(title: "You pick...", message: participant.fullname, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: completion))
         return alert

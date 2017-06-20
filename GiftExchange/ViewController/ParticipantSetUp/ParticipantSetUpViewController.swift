@@ -48,7 +48,7 @@ class ParticipantSetUpViewController: UITableViewController {
             try self.controller?.save(new)
             self.navigationController?.popViewController(animated: true)
         } catch ParticipantError.notValid(let errors) {
-            let alert = ErrorAlertDirector.error(with: errors)
+            let alert = ErrorAlertDirector.errors(with: errors)
             self.present(alert, animated: true, completion: nil)
         } catch {
             print("wat")

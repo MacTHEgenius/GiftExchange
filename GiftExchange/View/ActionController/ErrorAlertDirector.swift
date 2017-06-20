@@ -16,11 +16,15 @@ class ErrorAlertDirector {
         static let error = "There was an error"
     }
     
+    struct Message {
+        static let `default` = "Oops... Some error occured..."
+    }
+    
     struct Button {
         static let ok = "OK"
     }
     
-    static func error(with errors: [String]) -> UIAlertController {
+    static func errors(with errors: [String]) -> UIAlertController {
         
         let title = errors.count > 1 ? Title.errors : Title.error
         let alert = UIAlertController(title: title, message: "", preferredStyle: .alert)
@@ -35,6 +39,14 @@ class ErrorAlertDirector {
         
         return alert
         
+    }
+    
+    static func error(with message: String? = nil) -> UIAlertController {
+        let msg = message ?? Message.default
+        let alert = UIAlertController(title: Title.error, message: msg, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Button.ok, style: .cancel, handler: nil))
+        
+        return alert
     }
     
 }

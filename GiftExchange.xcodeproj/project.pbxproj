@@ -20,6 +20,7 @@
 		6A2203E91E8A11AD00D92FBD /* ParticipantsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2203E81E8A11AD00D92FBD /* ParticipantsTableViewDelegate.swift */; };
 		6A378A921EEA585300B2CDCA /* ParticipantMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A378A911EEA585300B2CDCA /* ParticipantMock.swift */; };
 		6A5FCE841EF9905F005334E3 /* PickedAlertDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5FCE831EF9905F005334E3 /* PickedAlertDirector.swift */; };
+		6A5FCE861EF9A386005334E3 /* PromptNipAlertDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5FCE851EF9A386005334E3 /* PromptNipAlertDirectory.swift */; };
 		6A6585591ED66764007DC5B6 /* ErrorAlertDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6585581ED66764007DC5B6 /* ErrorAlertDirector.swift */; };
 		6A7ECEF81D4DC0EB00D29DD3 /* ParticipantSetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7ECEF71D4DC0EB00D29DD3 /* ParticipantSetUpViewController.swift */; };
 		6A84E10F1EA2C9B500E31073 /* ParticipantSetUpDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A84E10E1EA2C9B500E31073 /* ParticipantSetUpDataSource.swift */; };
@@ -79,6 +80,7 @@
 		6A2203E81E8A11AD00D92FBD /* ParticipantsTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantsTableViewDelegate.swift; sourceTree = "<group>"; };
 		6A378A911EEA585300B2CDCA /* ParticipantMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantMock.swift; sourceTree = "<group>"; };
 		6A5FCE831EF9905F005334E3 /* PickedAlertDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PickedAlertDirector.swift; path = ActionController/PickedAlertDirector.swift; sourceTree = "<group>"; };
+		6A5FCE851EF9A386005334E3 /* PromptNipAlertDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PromptNipAlertDirectory.swift; path = ActionController/PromptNipAlertDirectory.swift; sourceTree = "<group>"; };
 		6A6585581ED66764007DC5B6 /* ErrorAlertDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorAlertDirector.swift; path = ActionController/ErrorAlertDirector.swift; sourceTree = "<group>"; };
 		6A7ECEF71D4DC0EB00D29DD3 /* ParticipantSetUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantSetUpViewController.swift; sourceTree = "<group>"; };
 		6A84E10E1EA2C9B500E31073 /* ParticipantSetUpDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantSetUpDataSource.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				6AA83D581D49E9F300B36668 /* ActionControllerBuilder.swift */,
 				6A6585581ED66764007DC5B6 /* ErrorAlertDirector.swift */,
 				6A5FCE831EF9905F005334E3 /* PickedAlertDirector.swift */,
+				6A5FCE851EF9A386005334E3 /* PromptNipAlertDirectory.swift */,
 			);
 			name = AlertController;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				6A2203DB1E8A00F900D92FBD /* Participant.swift in Sources */,
 				6AA83D5D1D4A8ED400B36668 /* RoundRectButton.swift in Sources */,
 				6ADE2EBA1EEE1E71009B97DB /* ResultsTableViewDelegate.swift in Sources */,
+				6A5FCE861EF9A386005334E3 /* PromptNipAlertDirectory.swift in Sources */,
 				6A2203DD1E8A023100D92FBD /* ParticipantsController.swift in Sources */,
 				6AA83D631D4AAC9A00B36668 /* ChoiceTableViewController.swift in Sources */,
 				6AA83D5F1D4AA5D400B36668 /* TabBarViewController.swift in Sources */,
