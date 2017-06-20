@@ -17,7 +17,10 @@ class SwapService {
     }
     
     func roll() -> [Participant: Participant] {
-        let dispatch = [Participant: Participant]()
+        var dispatch = [Participant:Participant]()
+        
+        self.participantsController.participants.forEach { (p) in dispatch[p] = p }
+        
         /*
         var participants = self.participantsController.participants
         

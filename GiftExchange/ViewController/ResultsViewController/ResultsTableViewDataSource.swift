@@ -11,10 +11,10 @@ import UIKit
 
 class ResultsTableViewDataSource: NSObject {
     
-    let participantsController: ParticipantsController
+    let participants: [String]
     
     init(tableView: UITableView, participants controller: ParticipantsController) {
-        self.participantsController = controller
+        self.participants = controller.firstNames
         super.init()
         tableView.dataSource = self
     }
@@ -28,11 +28,11 @@ extension ResultsTableViewDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.participantsController.fullNames.count
+        return self.participants.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let name = self.participantsController.fullNames[indexPath.row]
+        let name = self.participants[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: Id.result, for: indexPath)
         cell.textLabel?.text = name

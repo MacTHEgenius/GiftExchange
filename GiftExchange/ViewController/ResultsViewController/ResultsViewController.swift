@@ -25,8 +25,11 @@ class ResultsViewController: UIViewController {
         super.viewDidLoad()
         
         if let controller = self.participantsController {
+            let swap = SwapService(participantController: controller)
+            let results = swap.roll()
+            
             self.dataSource = ResultsTableViewDataSource(tableView: self.resultsTable, participants: controller)
-            self.delegate = ResultsTableViewDelegate(tableView: self.resultsTable)
+            self.delegate = ResultsTableViewDelegate(parent: self, tableView: self.resultsTable, participants: controller, results: results)
         }
     }
 

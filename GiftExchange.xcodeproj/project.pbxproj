@@ -19,7 +19,8 @@
 		6A2203E71E8A0C1900D92FBD /* ParticipantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2203E61E8A0C1900D92FBD /* ParticipantCell.swift */; };
 		6A2203E91E8A11AD00D92FBD /* ParticipantsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2203E81E8A11AD00D92FBD /* ParticipantsTableViewDelegate.swift */; };
 		6A378A921EEA585300B2CDCA /* ParticipantMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A378A911EEA585300B2CDCA /* ParticipantMock.swift */; };
-		6A6585591ED66764007DC5B6 /* AlertControllerDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6585581ED66764007DC5B6 /* AlertControllerDirector.swift */; };
+		6A5FCE841EF9905F005334E3 /* PickedAlertDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5FCE831EF9905F005334E3 /* PickedAlertDirector.swift */; };
+		6A6585591ED66764007DC5B6 /* ErrorAlertDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6585581ED66764007DC5B6 /* ErrorAlertDirector.swift */; };
 		6A7ECEF81D4DC0EB00D29DD3 /* ParticipantSetUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7ECEF71D4DC0EB00D29DD3 /* ParticipantSetUpViewController.swift */; };
 		6A84E10F1EA2C9B500E31073 /* ParticipantSetUpDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A84E10E1EA2C9B500E31073 /* ParticipantSetUpDataSource.swift */; };
 		6AA83D301D49DC1F00B36668 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D2F1D49DC1F00B36668 /* AppDelegate.swift */; };
@@ -77,7 +78,8 @@
 		6A2203E61E8A0C1900D92FBD /* ParticipantCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantCell.swift; sourceTree = "<group>"; };
 		6A2203E81E8A11AD00D92FBD /* ParticipantsTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantsTableViewDelegate.swift; sourceTree = "<group>"; };
 		6A378A911EEA585300B2CDCA /* ParticipantMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantMock.swift; sourceTree = "<group>"; };
-		6A6585581ED66764007DC5B6 /* AlertControllerDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertControllerDirector.swift; path = ActionController/AlertControllerDirector.swift; sourceTree = "<group>"; };
+		6A5FCE831EF9905F005334E3 /* PickedAlertDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PickedAlertDirector.swift; path = ActionController/PickedAlertDirector.swift; sourceTree = "<group>"; };
+		6A6585581ED66764007DC5B6 /* ErrorAlertDirector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorAlertDirector.swift; path = ActionController/ErrorAlertDirector.swift; sourceTree = "<group>"; };
 		6A7ECEF71D4DC0EB00D29DD3 /* ParticipantSetUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantSetUpViewController.swift; sourceTree = "<group>"; };
 		6A84E10E1EA2C9B500E31073 /* ParticipantSetUpDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantSetUpDataSource.swift; sourceTree = "<group>"; };
 		6AA83D2C1D49DC1F00B36668 /* GiftExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GiftExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -251,7 +253,8 @@
 			isa = PBXGroup;
 			children = (
 				6AA83D581D49E9F300B36668 /* ActionControllerBuilder.swift */,
-				6A6585581ED66764007DC5B6 /* AlertControllerDirector.swift */,
+				6A6585581ED66764007DC5B6 /* ErrorAlertDirector.swift */,
+				6A5FCE831EF9905F005334E3 /* PickedAlertDirector.swift */,
 			);
 			name = AlertController;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				6AB960E01EA865E0004EF427 /* NipCell.swift in Sources */,
 				6AB960D21EA323AF004EF427 /* ParticipantSetUpDelegate.swift in Sources */,
 				6AB960E61EA9AC1D004EF427 /* Validation.swift in Sources */,
+				6A5FCE841EF9905F005334E3 /* PickedAlertDirector.swift in Sources */,
 				6AB960DA1EA83B6B004EF427 /* CellBuilder.swift in Sources */,
 				6ADE2EB81EEE1E53009B97DB /* ResultsTableViewDataSource.swift in Sources */,
 				6A2203E41E8A0B0A00D92FBD /* ParticipantsTableViewDataSource.swift in Sources */,
@@ -493,7 +497,7 @@
 				6AA83D591D49E9F300B36668 /* ActionControllerBuilder.swift in Sources */,
 				6A84E10F1EA2C9B500E31073 /* ParticipantSetUpDataSource.swift in Sources */,
 				6ADE2EB21EEDEB8B009B97DB /* HideView.swift in Sources */,
-				6A6585591ED66764007DC5B6 /* AlertControllerDirector.swift in Sources */,
+				6A6585591ED66764007DC5B6 /* ErrorAlertDirector.swift in Sources */,
 				6A2203DF1E8A056900D92FBD /* Utils.swift in Sources */,
 				6A2203E11E8A05C900D92FBD /* SwapService.swift in Sources */,
 				6AA83D5B1D4A8D3B00B36668 /* RollViewController.swift in Sources */,

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class AlertControllerDirector {
+class ErrorAlertDirector {
     
     struct Title {
         static let errors = "There were some errors"
