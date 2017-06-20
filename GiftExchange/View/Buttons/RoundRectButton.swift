@@ -24,6 +24,7 @@ class RoundRectButton: UIButton {
     
     func initialize() {
         self.backgroundColor = self.tintColor
+        self.setTitleColor(UIColor.white, for: .normal)
         self.layer.cornerRadius = 4.0
         
         self.addTarget(self, action: #selector(touchUpInside(sender:)), for: .touchUpInside)
