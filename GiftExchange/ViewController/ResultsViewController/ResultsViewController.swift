@@ -19,7 +19,7 @@ class ResultsViewController: UIViewController {
     
     var dataSource: ResultsTableViewDataSource?
     var delegate: ResultsTableViewDelegate?
-    
+    var participantsController: ParticipantsController?
 
     override func viewDidLoad() {
         super.viewDidLoad()

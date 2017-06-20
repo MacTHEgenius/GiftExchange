@@ -10,10 +10,20 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
 	
-	var participantViewController: ParticipantsTableViewController!
+//    var participantViewController: ParticipantsTableViewController?
+//    var resultsViewController: ResultsViewController?
+    
+    var participantsController: ParticipantsController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let participants = self.viewControllers![0].childViewControllers[0] as? ParticipantsTableViewController, let results = self.viewControllers![1] as? ResultsViewController, let controller = self.participantsController {
+            participants.participantsController = controller
+            results.participantsController = controller
+        } else {
+            fatalError("Something went wrong with view controllers in tab bar or with participants controller.")
+        }
         
         /*
 		self.participantViewController = self.childViewControllers[0].childViewControllers[0] as! ParticipantsTableViewController
