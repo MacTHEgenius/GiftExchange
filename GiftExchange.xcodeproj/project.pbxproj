@@ -31,13 +31,8 @@
 		6AA83D4C1D49E1F800B36668 /* ParticipantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D4B1D49E1F800B36668 /* ParticipantsTableViewController.swift */; };
 		6AA83D531D49E4BA00B36668 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6AA83D551D49E4BA00B36668 /* Localizable.strings */; };
 		6AA83D591D49E9F300B36668 /* ActionControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D581D49E9F300B36668 /* ActionControllerBuilder.swift */; };
-		6AA83D5B1D4A8D3B00B36668 /* RollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D5A1D4A8D3B00B36668 /* RollViewController.swift */; };
 		6AA83D5D1D4A8ED400B36668 /* RoundRectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D5C1D4A8ED400B36668 /* RoundRectButton.swift */; };
 		6AA83D5F1D4AA5D400B36668 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D5E1D4AA5D400B36668 /* TabBarViewController.swift */; };
-		6AA83D611D4AA90000B36668 /* ViewChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D601D4AA90000B36668 /* ViewChoiceViewController.swift */; };
-		6AA83D631D4AAC9A00B36668 /* ChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D621D4AAC9A00B36668 /* ChoiceTableViewController.swift */; };
-		6AA83D651D4BED3A00B36668 /* ChoicePopOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D641D4BED3A00B36668 /* ChoicePopOverViewController.swift */; };
-		6AA83D671D4C01C200B36668 /* ChoiceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA83D661D4C01C200B36668 /* ChoiceTableViewCell.swift */; };
 		6AB4E2F11EECC7AC003DC58B /* ParticipantControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB4E2F01EECC7AC003DC58B /* ParticipantControllerTest.swift */; };
 		6AB4E2F31EECC8C6003DC58B /* ParticipantsControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB4E2F21EECC8C6003DC58B /* ParticipantsControllerMock.swift */; };
 		6AB960CE1EA2CF97004EF427 /* ParticipantCanPickCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB960CD1EA2CF97004EF427 /* ParticipantCanPickCell.swift */; };
@@ -46,7 +41,6 @@
 		6AB960D81EA5A94D004EF427 /* InfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB960D71EA5A94D004EF427 /* InfoCell.swift */; };
 		6AB960DA1EA83B6B004EF427 /* CellBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB960D91EA83B6B004EF427 /* CellBuilder.swift */; };
 		6AB960E01EA865E0004EF427 /* NipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB960DF1EA865E0004EF427 /* NipCell.swift */; };
-		6AB960E41EA9AA7B004EF427 /* ChoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB960E31EA9AA7B004EF427 /* ChoiceCell.xib */; };
 		6AB960E61EA9AC1D004EF427 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB960E51EA9AC1D004EF427 /* Validation.swift */; };
 		6ADE2EB21EEDEB8B009B97DB /* HideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE2EB11EEDEB8B009B97DB /* HideView.swift */; };
 		6ADE2EB61EEE1D37009B97DB /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE2EB51EEE1D37009B97DB /* ResultsViewController.swift */; };
@@ -97,13 +91,8 @@
 		6AA83D561D49E4CF00B36668 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6AA83D571D49E4D100B36668 /* fr-CA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "fr-CA"; path = "fr-CA.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6AA83D581D49E9F300B36668 /* ActionControllerBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionControllerBuilder.swift; path = ActionController/ActionControllerBuilder.swift; sourceTree = "<group>"; };
-		6AA83D5A1D4A8D3B00B36668 /* RollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RollViewController.swift; sourceTree = "<group>"; };
 		6AA83D5C1D4A8ED400B36668 /* RoundRectButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundRectButton.swift; sourceTree = "<group>"; };
 		6AA83D5E1D4AA5D400B36668 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		6AA83D601D4AA90000B36668 /* ViewChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewChoiceViewController.swift; sourceTree = "<group>"; };
-		6AA83D621D4AAC9A00B36668 /* ChoiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceTableViewController.swift; sourceTree = "<group>"; };
-		6AA83D641D4BED3A00B36668 /* ChoicePopOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoicePopOverViewController.swift; sourceTree = "<group>"; };
-		6AA83D661D4C01C200B36668 /* ChoiceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceTableViewCell.swift; sourceTree = "<group>"; };
 		6AB4E2F01EECC7AC003DC58B /* ParticipantControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParticipantControllerTest.swift; path = Controller/ParticipantControllerTest.swift; sourceTree = "<group>"; };
 		6AB4E2F21EECC8C6003DC58B /* ParticipantsControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsControllerMock.swift; sourceTree = "<group>"; };
 		6AB960CD1EA2CF97004EF427 /* ParticipantCanPickCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParticipantCanPickCell.swift; sourceTree = "<group>"; };
@@ -112,7 +101,6 @@
 		6AB960D71EA5A94D004EF427 /* InfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCell.swift; sourceTree = "<group>"; };
 		6AB960D91EA83B6B004EF427 /* CellBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellBuilder.swift; sourceTree = "<group>"; };
 		6AB960DF1EA865E0004EF427 /* NipCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NipCell.swift; sourceTree = "<group>"; };
-		6AB960E31EA9AA7B004EF427 /* ChoiceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChoiceCell.xib; sourceTree = "<group>"; };
 		6AB960E51EA9AC1D004EF427 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		6ADE2EB11EEDEB8B009B97DB /* HideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideView.swift; sourceTree = "<group>"; };
 		6ADE2EB51EEE1D37009B97DB /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
@@ -289,12 +277,6 @@
 				6A2203D91E8A00BD00D92FBD /* ViewController */,
 				6A2203D71E8A00A800D92FBD /* View */,
 				6AA83D3D1D49DC1F00B36668 /* Info.plist */,
-				6AB960E31EA9AA7B004EF427 /* ChoiceCell.xib */,
-				6AA83D5A1D4A8D3B00B36668 /* RollViewController.swift */,
-				6AA83D601D4AA90000B36668 /* ViewChoiceViewController.swift */,
-				6AA83D621D4AAC9A00B36668 /* ChoiceTableViewController.swift */,
-				6AA83D661D4C01C200B36668 /* ChoiceTableViewCell.swift */,
-				6AA83D641D4BED3A00B36668 /* ChoicePopOverViewController.swift */,
 			);
 			path = GiftExchange;
 			sourceTree = "<group>";
@@ -444,7 +426,6 @@
 				6AA83D3C1D49DC1F00B36668 /* LaunchScreen.storyboard in Resources */,
 				6AA83D531D49E4BA00B36668 /* Localizable.strings in Resources */,
 				6AA83D391D49DC1F00B36668 /* Assets.xcassets in Resources */,
-				6AB960E41EA9AA7B004EF427 /* ChoiceCell.xib in Resources */,
 				6AA83D371D49DC1F00B36668 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,7 +468,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AA83D301D49DC1F00B36668 /* AppDelegate.swift in Sources */,
-				6AA83D671D4C01C200B36668 /* ChoiceTableViewCell.swift in Sources */,
 				6AB960E01EA865E0004EF427 /* NipCell.swift in Sources */,
 				6AB960D21EA323AF004EF427 /* ParticipantSetUpDelegate.swift in Sources */,
 				6AB960E61EA9AC1D004EF427 /* Validation.swift in Sources */,
@@ -503,18 +483,14 @@
 				6A6585591ED66764007DC5B6 /* ErrorAlertDirector.swift in Sources */,
 				6A2203DF1E8A056900D92FBD /* Utils.swift in Sources */,
 				6A2203E11E8A05C900D92FBD /* SwapService.swift in Sources */,
-				6AA83D5B1D4A8D3B00B36668 /* RollViewController.swift in Sources */,
 				6A2203DB1E8A00F900D92FBD /* Participant.swift in Sources */,
 				6AA83D5D1D4A8ED400B36668 /* RoundRectButton.swift in Sources */,
 				6ADE2EBA1EEE1E71009B97DB /* ResultsTableViewDelegate.swift in Sources */,
 				6A5FCE861EF9A386005334E3 /* PromptNipAlertDirectory.swift in Sources */,
 				6A2203DD1E8A023100D92FBD /* ParticipantsController.swift in Sources */,
-				6AA83D631D4AAC9A00B36668 /* ChoiceTableViewController.swift in Sources */,
 				6AA83D5F1D4AA5D400B36668 /* TabBarViewController.swift in Sources */,
 				6AA83D4C1D49E1F800B36668 /* ParticipantsTableViewController.swift in Sources */,
-				6AA83D651D4BED3A00B36668 /* ChoicePopOverViewController.swift in Sources */,
 				6AB960D81EA5A94D004EF427 /* InfoCell.swift in Sources */,
-				6AA83D611D4AA90000B36668 /* ViewChoiceViewController.swift in Sources */,
 				6AB960D01EA2D345004EF427 /* ParticipantController.swift in Sources */,
 				6A2203E91E8A11AD00D92FBD /* ParticipantsTableViewDelegate.swift in Sources */,
 				6A7ECEF81D4DC0EB00D29DD3 /* ParticipantSetUpViewController.swift in Sources */,
