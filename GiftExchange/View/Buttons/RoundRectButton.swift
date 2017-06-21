@@ -42,12 +42,12 @@ class RoundRectButton: UIButton {
     // MARK: - Action methods
     
     func touchUpInside(sender: RoundRectButton) {
-        print("touch up inside")
+//        print("touch up inside")
         self.alpha = 1
     }
     
     func touchDown(sender: RoundRectButton) {
-        print("touch down")
+//        print("touch down")
         self.alpha = 0.5
     }
 

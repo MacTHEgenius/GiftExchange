@@ -78,12 +78,12 @@
                                             <constraint firstAttribute="width" constant="183" id="5Up-Ff-S74"/>
                                             <constraint firstAttribute="height" constant="42" id="8E0-jo-6Ua"/>
                                         </constraints>
-                                        <state key="normal" title="See the results"/>
+                                        <state key="normal" title="See"/>
                                         <connections>
-                                            <action selector="onSeeResultsTapped:" destination="Cbz-bn-1WM" eventType="touchUpInside" id="Obb-6Q-cNJ"/>
+                                            <action selector="onButtonTapped:" destination="aM3-OQ-miR" eventType="touchUpInside" id="qxS-gr-4fQ"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roll out !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ3-BU-vQg">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Results are here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ3-BU-vQg">
                                         <rect key="frame" x="8" y="227" width="359" height="90"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="90" id="DtR-wu-GUk"/>

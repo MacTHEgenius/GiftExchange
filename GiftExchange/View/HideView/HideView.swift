@@ -10,39 +10,21 @@ import UIKit
 
 class HideView: UIView {
     
-    // MARK: - Initialization
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.setupButton()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.setupButton()
-    }
-    
-    // MARK: - Private methods
-    
-    private func setupButton() {
-//        let frame = CGRect(x: 0, y: 0, width: self.frame.width * 0.8, height: 44.0)
-//        let button = RoundRectButton(frame: frame)
-//            
-//        button.translatesAutoresizingMaskIntoConstraints = true
-//        button.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
-//        button.widthAnchor.constraint(equalToConstant: self.frame.width * 0.8).isActive = true
-//        button.center = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
-//        button.text = "See results"
-//        
-//        button.addTarget(self, action: #selector(onButtonTapped(button:)), for: .touchUpInside)
-//        
-//        self.addSubview(button)
-    }
+//    var participantsCount: Int?
     
     // MARK: - Button action
     
-    func onButtonTapped(button: UIButton) {
-        print("Button tapped 👍")
+    @IBAction func onButtonTapped(_ sender: UIButton) {
+        UIView.animate(withDuration: 1.0, animations: {
+            self.alpha = 0.0
+        }) { (animated) in
+            self.isHidden = true
+        }
+    }
+    
+    func reset() {
+        self.isHidden = false
+        self.alpha = 1.0
     }
 
 }

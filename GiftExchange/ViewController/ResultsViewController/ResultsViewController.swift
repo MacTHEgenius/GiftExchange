@@ -34,22 +34,11 @@ class ResultsViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        self.topView.isHidden = false
-        self.topView.alpha = 1.0
+        self.topView.reset()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    // MARK: - Hide Top view
-    
-    @IBAction func onSeeResultsTapped(_ sender: UIButton) {
-        UIView.animate(withDuration: 1.0, animations: {
-            self.topView.alpha = 0.0
-        }) { (animated) in
-            self.topView.isHidden = true
-        }
     }
 
 }
