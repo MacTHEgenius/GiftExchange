@@ -39,6 +39,13 @@ class RoundRectButton: UIButton {
         }
     }
     
+    var active: Bool = true {
+        didSet {
+            super.isEnabled = self.active
+            super.alpha = super.isEnabled ? 1.0 : 0.5
+        }
+    }
+    
     // MARK: - Action methods
     
     func touchUpInside(sender: RoundRectButton) {

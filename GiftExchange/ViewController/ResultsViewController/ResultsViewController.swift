@@ -36,7 +36,7 @@ class ResultsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         if let controller = self.participantsController {
             let count = controller.participants.count
-            self.topView.updateParticipantLabel(count)
+            self.topView.updateView(count)
         }
     }
     

@@ -113,6 +113,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="caption" destination="xXY-br-VuG" id="ohO-5u-8l2"/>
+                                    <outlet property="seeButton" destination="5sF-gB-ysV" id="oYa-MR-L2C"/>
                                     <outlet property="title" destination="ZQ3-BU-vQg" id="wMy-P7-Xdq"/>
                                 </connections>
                             </view>
