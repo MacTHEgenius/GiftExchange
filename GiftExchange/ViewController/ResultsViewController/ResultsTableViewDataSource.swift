@@ -11,12 +11,16 @@ import UIKit
 
 class ResultsTableViewDataSource: NSObject {
     
-    let participants: [String]
+    private(set) var participants: [String]
     
     init(tableView: UITableView, participants controller: ParticipantsController) {
         self.participants = controller.firstNames
         super.init()
         tableView.dataSource = self
+    }
+    
+    func updateData(participants: [String]) {
+        self.participants = participants
     }
     
 }

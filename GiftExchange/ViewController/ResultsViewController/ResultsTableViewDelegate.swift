@@ -12,8 +12,9 @@ import UIKit
 class ResultsTableViewDelegate: NSObject {
     
     let parent: ResultsViewController
-    let participants: [Participant]
-    let results: [Participant:Participant]
+    
+    private(set) var participants: [Participant]
+    private(set) var results: [Participant:Participant]
     
     init(parent: ResultsViewController, tableView: UITableView, participants controller: ParticipantsController, results: [Participant:Participant]) {
         self.parent = parent
@@ -21,6 +22,11 @@ class ResultsTableViewDelegate: NSObject {
         self.results = results
         super.init()
         tableView.delegate = self
+    }
+    
+    func updateData(participants: [Participant], newResults new: [Participant:Participant]) {
+        self.participants = participants
+        self.results = new
     }
     
 }
