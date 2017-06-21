@@ -16,6 +16,8 @@ class PromptNipAlertDirectory {
         alert.addTextField { (textfield) in
             textfield.keyboardType = .numberPad
             textfield.placeholder = "NIP"
+            textfield.textAlignment = .center
+            textfield.isSecureTextEntry = true
         }
         alert.addAction(UIAlertAction(title: "I'll show myself out...", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "It's me, I promise !", style: .default) { (alertAction) in
