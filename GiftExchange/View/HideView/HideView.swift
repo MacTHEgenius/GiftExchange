@@ -10,7 +10,10 @@ import UIKit
 
 class HideView: UIView {
     
-//    var participantsCount: Int?
+    // MARK: - IBOutlets
+    
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var caption: UILabel!
     
     // MARK: - Button action
     
@@ -25,6 +28,10 @@ class HideView: UIView {
     func reset() {
         self.isHidden = false
         self.alpha = 1.0
+    }
+    
+    func updateParticipantLabel(_ count: Int) {
+        self.caption.text = "participant".pluralize(count) + " \(count > 1 ? "are" : "is") registered"
     }
 
 }
