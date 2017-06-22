@@ -29,17 +29,17 @@ class ParticipantControllerTest: XCTestCase {
     func testPick_WithIsPickedTrue() {
         let expected = [Constant.other.id: true]
         
-        self.controller.pick(Constant.other, isPicked: true)
+        self.controller.doNotPick(Constant.other, isPicked: true)
         
-        XCTAssertEqual(self.controller.canPick, expected)
+        XCTAssertEqual(self.controller.cantPick, expected)
     }
     
     func testPick_WithIsPickedFalse() {
         let expected = [Constant.other.id: false]
         
-        self.controller.pick(Constant.other, isPicked: false)
+        self.controller.doNotPick(Constant.other, isPicked: false)
         
-        XCTAssertEqual(self.controller.canPick, expected)
+        XCTAssertEqual(self.controller.cantPick, expected)
     }
     
     func testSave_ShouldNotThrow_WithAllValid() {

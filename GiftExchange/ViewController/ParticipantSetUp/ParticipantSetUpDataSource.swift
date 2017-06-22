@@ -38,7 +38,7 @@ extension ParticipantSetUpDataSource: UITableViewDataSource {
         if section == 0 {
             return "Participant infos"
         }
-        return "Can pick..."
+        return "Can't pick..."
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,7 +54,7 @@ extension ParticipantSetUpDataSource: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == Const.section - 1 {
-            return self.configureCanPickCell(tableView, for: indexPath)
+            return self.configureCantPickCell(tableView, for: indexPath)
         } else {
             return self.configureCell(tableView, for: indexPath)
         }
@@ -79,13 +79,13 @@ extension ParticipantSetUpDataSource: UITableViewDataSource {
         return director.build(builder: builder!)
     }
     
-    private func configureCanPickCell(_ tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ParticipantCanPickCell.id, for: indexPath) as! ParticipantCanPickCell
+    private func configureCantPickCell(_ tableView: UITableView, for indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ParticipantCantPickCell.id, for: indexPath) as! ParticipantCantPickCell
         
         let otherParticipant = self.controller.parent.participants[indexPath.row]
         cell.name = otherParticipant.fullname
         if let currentParticipant = self.controller.participant {
-            cell.check = currentParticipant.canPick(otherParticipant)
+            cell.check = !currentParticipant.canPick(otherParticipant)
         }
         
         return cell

@@ -44,29 +44,29 @@ class ParticipantTest: XCTestCase {
     
     func testCanPickDictionaryParsingWhenInitiliaze() {
         let canPickDict = ["hello": true, "world": false, "!": true]
-        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip, canPick: canPickDict)
+        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip, cantPick: canPickDict)
         
-        XCTAssertEqual(participant.canPick, ["hello", "!"])
+        XCTAssertEqual(participant.cantPick, ["hello", "!"])
     }
     
     // MARK: - CanPick:participant tests
     
-    func testCanPickWithPickableParticipant() {
+    func testCantPickWithPickableParticipant() {
         let participantToPick = Participant(with: Constants.otherFn, and: Constants.otherLn, nip: Constants.defaultNip)
-        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip, canPick: [participantToPick.id:true])
+        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip, cantPick: [participantToPick.id:false])
         
         let canPick = participant.canPick(participantToPick)
         
-        XCTAssert(canPick, "CanPick should be truthy")
+        XCTAssert(canPick, "CantPick should be truthy")
     }
     
-    func testCanPickWithUnpickableParticipant() {
+    func testCantPickWithUnpickableParticipant() {
         let participantToPick = Participant(with: Constants.otherFn, and: Constants.otherLn, nip: Constants.defaultNip)
-        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip)
+        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip, cantPick: [participantToPick.id:true])
         
         let canPick = participant.canPick(participantToPick)
         
-        XCTAssertFalse(canPick, "CanPick should be truthy")
+        XCTAssertFalse(canPick, "CantPick should be truthy")
     }
     
     // MARK: - Update tests
@@ -104,12 +104,12 @@ class ParticipantTest: XCTestCase {
     func testUpdateWithCanPickUpdated() {
         let canPickDict = ["hello": true, "world": false, "!": true]
         let old = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip)
-        let new = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.otherNip, canPick: canPickDict)
+        let new = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.otherNip, cantPick: canPickDict)
         
         old.update(new)
         
-        XCTAssertEqual(old.canPick, new.canPick)
-        XCTAssertEqual(new.canPick, ["hello", "!"])
+        XCTAssertEqual(old.cantPick, new.cantPick)
+        XCTAssertEqual(new.cantPick, ["hello", "!"])
     }
     
     // MARK: - Validate tests

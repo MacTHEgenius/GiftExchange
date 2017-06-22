@@ -15,7 +15,11 @@ class Participant: NSObject, Validable {
     private(set) var lastName: String
     private(set) var nip: String
     private(set) var chosen: Bool
-    /*private(set)*/ var canPick: [String]
+    /*private(set)*/ var cantPick: [String] {
+        didSet {
+            self.cantPick.append(self.id)
+        }
+    }
     
     var fullname: String {
         return "\(self.firstName) \(lastName)"
@@ -29,15 +33,16 @@ class Participant: NSObject, Validable {
         return self.id.hashValue
     }
     
-    init(with firstname: String, and lastName: String, nip: String, canPick: [String:Bool] = [:]) {
-        self.id = UUID().uuidString
+    init(with firstname: String, and lastName: String, nip: String, cantPick: [String:Bool] = [:]) {
+        let id = UUID().uuidString
+        self.id = id
         self.firstName = firstname
         self.lastName = lastName
         self.nip = nip
         self.chosen = false
         
-        let temp = canPick.map({ (key, value) in value ? key : "" })
-        self.canPick = temp.filter({ (str) in str != "" })
+        let temp = cantPick.map({ (key, value) in value ? key : "" })
+        self.cantPick = temp.filter({ (str) in str != "" })
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -45,7 +50,7 @@ class Participant: NSObject, Validable {
         self.firstName = aDecoder.decodeObject(forKey: "firstName") as! String
         self.lastName = aDecoder.decodeObject(forKey: "lastName") as! String
         self.nip = aDecoder.decodeObject(forKey: "nip") as! String
-        self.canPick = aDecoder.decodeObject(forKey: "canPicked") as! [String]
+        self.cantPick = aDecoder.decodeObject(forKey: "cantPick") as! [String]
         self.chosen = aDecoder.decodeBool(forKey: "chosen")
     }
     
@@ -54,18 +59,18 @@ class Participant: NSObject, Validable {
         aCoder.encode(self.firstName, forKey: "firstName")
         aCoder.encode(self.lastName, forKey: "lastName")
         aCoder.encode(self.nip, forKey: "nip")
-        aCoder.encode(self.canPick, forKey: "canPicked")
+        aCoder.encode(self.cantPick, forKey: "cantPick")
         aCoder.encode(self.chosen, forKey: "chosen")
     }
     
     func canPick(_ participant: Participant) -> Bool {
-        return self.canPick.contains(participant.id)
+        return !self.cantPick.contains(participant.id)
     }
     
     func update(_ participant: Participant) {
         self.firstName = participant.firstName
         self.lastName = participant.lastName
-        self.canPick = participant.canPick
+        self.cantPick = participant.cantPick
         self.nip = participant.nip
     }
     

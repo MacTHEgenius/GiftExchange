@@ -13,13 +13,13 @@ class ParticipantController {
     let parent: ParticipantsController
     let participant: Participant?
     
-    private(set) var canPick: [String:Bool] = [:]
+    private(set) var cantPick: [String:Bool] = [:]
     
     init(_ participant: Participant? = nil, parent: ParticipantsController) {
         self.participant = participant
         self.parent = parent
         if let participant = self.participant {
-            self.canPick = participant.canPick.reduce(self.canPick) { (dict, participantId) -> [String:Bool] in
+            self.cantPick = participant.cantPick.reduce(self.cantPick) { (dict, participantId) -> [String:Bool] in
                 var d = dict
                 d[participantId] = true
                 return d
@@ -27,13 +27,13 @@ class ParticipantController {
         }
     }
     
-    func pick(_ participant: Participant, isPicked: Bool) {
-        self.canPick[participant.id] = isPicked
+    func doNotPick(_ participant: Participant, isPicked: Bool) {
+        self.cantPick[participant.id] = isPicked
     }
     
     func save(_ participant: Participant) throws {
-        let temp = self.canPick.map({ (key, value) in value ? key : "" })
-        participant.canPick = temp.filter({ (str) in str != "" })
+        let temp = self.cantPick.map({ (key, value) in value ? key : "" })
+        participant.cantPick = temp.filter({ (str) in str != "" })
         
         if participant.valid {
             if let p = self.participant {

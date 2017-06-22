@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ParticipantCanPickCell: UITableViewCell {
+class ParticipantCantPickCell: UITableViewCell {
 
     static let id = "ParicipantCanPickCell"
     

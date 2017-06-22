@@ -9,6 +9,7 @@
 import XCTest
 @testable import GiftExchange
 
+/*
 class ParticipantsControllerTest: XCTestCase {
     
     let testFilePath = NSTemporaryDirectory() + "test.txt"
@@ -46,7 +47,7 @@ class ParticipantsControllerTest: XCTestCase {
         XCTAssertTrue(retrieved.isEmpty, "Participants are not empty.")
     }
     
-    /*func testAdd() {
+    func testAdd() {
         let controller = ParticipantsController(with: testFilePath)
         
         controller.add(Constants.participant)
@@ -54,7 +55,7 @@ class ParticipantsControllerTest: XCTestCase {
         print(controller.fullNames)
         
         XCTAssertEqual(retrieved.count, 1)
-    }*/
+    }
     
     func testRemove() {
         let controller = ParticipantsController(with: testFilePath)
@@ -102,3 +103,4 @@ class ParticipantsControllerTest: XCTestCase {
         XCTAssertTrue(singleController.parent === controller)
     }
 }
+ */
