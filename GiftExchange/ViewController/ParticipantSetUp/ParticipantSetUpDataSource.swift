@@ -86,6 +86,9 @@ extension ParticipantSetUpDataSource: UITableViewDataSource {
         cell.name = otherParticipant.fullname
         if let currentParticipant = self.controller.participant {
             cell.check = !currentParticipant.canPick(otherParticipant)
+            if currentParticipant.id == otherParticipant.id {
+                cell.selectionStyle = .none
+            }
         }
         
         return cell

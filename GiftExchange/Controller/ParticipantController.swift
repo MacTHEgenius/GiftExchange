@@ -28,7 +28,9 @@ class ParticipantController {
     }
     
     func doNotPick(_ participant: Participant, isPicked: Bool) {
-        self.cantPick[participant.id] = isPicked
+        if let current = self.participant, current.id != participant.id {
+            self.cantPick[participant.id] = isPicked
+        }
     }
     
     func save(_ participant: Participant) throws {

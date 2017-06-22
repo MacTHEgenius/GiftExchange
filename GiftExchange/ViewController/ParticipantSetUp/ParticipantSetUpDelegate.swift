@@ -27,8 +27,10 @@ extension ParticipantSetUpDelegate: UITableViewDelegate {
         if indexPath.section == ParticipantSetUpDataSource.Const.section - 1 {
             let cell = tableView.cellForRow(at: indexPath) as! ParticipantCantPickCell
             let participantSelected = self.controller.parent.participants[indexPath.row]
-            cell.select()
-            self.controller.doNotPick(participantSelected, isPicked: cell.check)
+            if let participant = self.controller.participant, participant.id != participantSelected.id {
+                cell.select()
+                self.controller.doNotPick(participantSelected, isPicked: cell.check)
+            }
         }
     }
     

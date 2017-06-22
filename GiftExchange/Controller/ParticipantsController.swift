@@ -35,13 +35,6 @@ class ParticipantsController {
         }
     }()
     
-//    var p: [Participant] {
-//        get {
-//            guard let participants = NSKeyedUnarchiver.unarchiveObject(withFile: self.path) as? [Participant] else { return [] }
-//            return participants
-//        }
-//    }
-    
     var fullNames: [String] {
         return self.participants.map({ (p) -> String in p.fullname })
     }
