@@ -21,100 +21,31 @@ class SwapService {
         var list = self.participantsController.participants
         
         for p in list {
-            print("Hey master")
-            
             var picked: Participant
+            print(p.fullname, "is choosing...")
             
             repeat {
-                var index = Int(arc4random_uniform(UInt32(list.count)))
+                let index = Int(arc4random_uniform(UInt32(list.count)))
                 picked = list[index]
-                print("List", list)
-                print("p", p)
-                print("picked", picked)
-                print(p.canPick(picked))
                 
-//                if p.canPick(picked) {
-//                    dispatch[p] = picked
-//                    list.remove(at: index)
-//                } else if list.count == 1 {
-//                    print("Hey 2")
-//                    break
-//                }
+                print("->", picked.fullname, "was picked...")
+                
+                if p.canPick(picked) {
+                    print("---> ok")
+                    dispatch[p] = picked
+                    list.remove(at: index)
+                } else if list.count == 1 {
+                    print("\n\nCount to 1\n\n")
+                    break
+                }
             } while !p.canPick(picked)
             
         }
         
-        print(dispatch)
-        print(list)
-        
-        
-        //self.participantsController.participants.forEach { (p) in dispatch[p] = p }
-        
-        /*
-        var participants = self.participantsController.participants
-        
-        for participant in participants {
-            var randomIndex = Int(arc4random_uniform(UInt32(participants.count)))
-            var participantPicked = participants[randomIndex]
-            print("\(participant) picked \(participantPicked)")
-            print("Can't pick \(participantPicked) : \(participant.cantPicked(participantPicked)) - \(participant.cantPicked.contains(participantPicked.fullname))")
-            print(participant.cantPicked)
-            
-            while participant.cantPicked(participantPicked) {
-                if participants.count > 1 {
-                    var newIndex: Int
-                    repeat {
-                        newIndex = Int(arc4random_uniform(UInt32(participants.count)))
-                    } while newIndex == randomIndex
-                    participantPicked = participants[newIndex]
-                    randomIndex = newIndex
-                } else {
-                    print("count to 1")
-                    let dispatchAsArray = Array(dispatch)
-                    var (alreadyDispatch, alreadyPicked): (Participant, Participant)
-                    var index = 0
-                    repeat {
-                        (alreadyDispatch, alreadyPicked) = dispatchAsArray[index]
-                        index += 1
-                    } while participant.cantPicked(alreadyPicked) && index < dispatchAsArray.count
-                    dispatch[alreadyDispatch] = participantPicked
-                    dispatch[participant] = alreadyPicked
-                    //					self.participants.removeLast()
-                    print(dispatch)
-                    randomIndex = index
-                    break
-                }
-            }
-            
-            
-            /*
-            			if participant.cantPicked(participantPicked) {
-            				print("wrong !")
-            				if self.participants.count == 1 {
-            				}
-            				var newIndex: Int
-            				repeat {
-            					newIndex = Int(arc4random_uniform(UInt32(self.participants.count)))
-            					print("Can't pick \(self.participants[newIndex]) : \(participant.cantPicked(self.participants[newIndex]))")
-            					if participant.cantPicked(self.participants[newIndex]) {
-            						print("nope !")
-            						newIndex = randomIndex
-            					} else {
-            						participantPicked = self.participants[newIndex]
-            						print("yes !")
-            					}
-            				} while randomIndex == newIndex
-            				randomIndex = newIndex
-            			}
-            */
-            
-            
-            dispatch[participant] = participantPicked
-            participantPicked.chosen = true
-            print("\(participant) picked \(participantPicked)")
-            participants.remove(at: randomIndex)
+        if list.count == 1 {
+            dispatch = self.roll()
         }
-        */
+        
         return dispatch
     }
     
