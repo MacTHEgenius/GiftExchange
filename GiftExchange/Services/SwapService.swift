@@ -18,8 +18,37 @@ class SwapService {
     
     func roll() -> [Participant: Participant] {
         var dispatch = [Participant:Participant]()
+        var list = self.participantsController.participants
         
-        self.participantsController.participants.forEach { (p) in dispatch[p] = p }
+        for p in list {
+            print("Hey master")
+            
+            var picked: Participant
+            
+            repeat {
+                var index = Int(arc4random_uniform(UInt32(list.count)))
+                picked = list[index]
+                print("List", list)
+                print("p", p)
+                print("picked", picked)
+                print(p.canPick(picked))
+                
+//                if p.canPick(picked) {
+//                    dispatch[p] = picked
+//                    list.remove(at: index)
+//                } else if list.count == 1 {
+//                    print("Hey 2")
+//                    break
+//                }
+            } while !p.canPick(picked)
+            
+        }
+        
+        print(dispatch)
+        print(list)
+        
+        
+        //self.participantsController.participants.forEach { (p) in dispatch[p] = p }
         
         /*
         var participants = self.participantsController.participants

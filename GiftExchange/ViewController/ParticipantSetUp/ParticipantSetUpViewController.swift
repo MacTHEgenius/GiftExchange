@@ -34,7 +34,6 @@ class ParticipantSetUpViewController: UITableViewController {
     }
     
     func didTapSave(sender: UIBarButtonItem) {
-        print("Save")
         guard let dataSource = self.tableViewDataSource,
             let fname = dataSource.firstnameCell?.value,
             let lname = dataSource.lastnameCell?.value,

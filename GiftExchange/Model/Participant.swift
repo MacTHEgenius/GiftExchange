@@ -15,9 +15,21 @@ class Participant: NSObject, Validable {
     private(set) var lastName: String
     private(set) var nip: String
     private(set) var chosen: Bool
-    /*private(set)*/ var cantPick: [String] {
+    private var cannotPick: [String] {
+        willSet {
+            self.cannotPick.removeAll()
+        }
         didSet {
-            self.cantPick.append(self.id)
+            self.cannotPick.append(self.id)
+        }
+    }
+    
+    var cantPick: [String] {
+        get {
+            return self.cannotPick.filter { $0 != self.id }
+        }
+        set {
+            self.cannotPick = newValue
         }
     }
     
@@ -42,7 +54,7 @@ class Participant: NSObject, Validable {
         self.chosen = false
         
         let temp = cantPick.map({ (key, value) in value ? key : "" })
-        self.cantPick = temp.filter({ (str) in str != "" })
+        self.cannotPick = temp.filter({ (str) in str != "" })
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -50,7 +62,7 @@ class Participant: NSObject, Validable {
         self.firstName = aDecoder.decodeObject(forKey: "firstName") as! String
         self.lastName = aDecoder.decodeObject(forKey: "lastName") as! String
         self.nip = aDecoder.decodeObject(forKey: "nip") as! String
-        self.cantPick = aDecoder.decodeObject(forKey: "cantPick") as! [String]
+        self.cannotPick = aDecoder.decodeObject(forKey: "cantPick") as! [String]
         self.chosen = aDecoder.decodeBool(forKey: "chosen")
     }
     
@@ -59,18 +71,18 @@ class Participant: NSObject, Validable {
         aCoder.encode(self.firstName, forKey: "firstName")
         aCoder.encode(self.lastName, forKey: "lastName")
         aCoder.encode(self.nip, forKey: "nip")
-        aCoder.encode(self.cantPick, forKey: "cantPick")
+        aCoder.encode(self.cannotPick, forKey: "cantPick")
         aCoder.encode(self.chosen, forKey: "chosen")
     }
     
     func canPick(_ participant: Participant) -> Bool {
-        return !self.cantPick.contains(participant.id)
+        return !self.cannotPick.contains(participant.id)
     }
     
     func update(_ participant: Participant) {
         self.firstName = participant.firstName
         self.lastName = participant.lastName
-        self.cantPick = participant.cantPick
+        self.cannotPick = participant.cantPick
         self.nip = participant.nip
     }
     
