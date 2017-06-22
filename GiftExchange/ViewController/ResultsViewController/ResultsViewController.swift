@@ -35,7 +35,7 @@ class ResultsViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         if let controller = self.participantsController, let swap = self.swap {
             let result = swap.roll()
             
@@ -44,6 +44,10 @@ class ResultsViewController: UIViewController {
             self.delegate?.updateData(participants: controller.participants, newResults: result)
             self.resultsTable.reloadData()
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
