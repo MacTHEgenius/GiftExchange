@@ -130,7 +130,7 @@
                             <constraint firstItem="YvN-me-I8N" firstAttribute="leading" secondItem="28F-EP-4zl" secondAttribute="leading" id="zgK-Jm-rdo"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Swap" image="second" id="OzI-hw-Atp"/>
+                    <tabBarItem key="tabBarItem" title="Échange" image="second" id="OzI-hw-Atp"/>
                     <connections>
                         <outlet property="resultsTable" destination="YvN-me-I8N" id="DqW-le-Dm5"/>
                         <outlet property="topView" destination="aM3-OQ-miR" id="ZQx-bA-xle"/>

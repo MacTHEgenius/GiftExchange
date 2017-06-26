@@ -11,9 +11,17 @@ import UIKit
 
 class PickedAlertDirector {
     
+    struct Title {
+        static let pick = "pick".localized
+    }
+    
+    struct Button {
+        static let ok = "ok".localized
+    }
+    
     static func picked(_ participant: Participant, completion: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
-        let alert = UIAlertController(title: "You pick...", message: participant.fullname, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: completion))
+        let alert = UIAlertController(title: Title.pick, message: participant.fullname, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Button.ok, style: .cancel, handler: completion))
         return alert
     }
     
