@@ -11,8 +11,8 @@ import UIKit
 class HideView: UIView {
     
     struct Title {
-        static let notQuite = "Not quite..."
-        static let letsSee = "Let's see the results !"
+        static let notQuite = "not_enough".localized
+        static let letsSee = "see_results".localized
     }
     
     // MARK: - IBOutlets

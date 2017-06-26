@@ -78,7 +78,7 @@
                                             <constraint firstAttribute="width" constant="183" id="5Up-Ff-S74"/>
                                             <constraint firstAttribute="height" constant="42" id="8E0-jo-6Ua"/>
                                         </constraints>
-                                        <state key="normal" title="See"/>
+                                        <state key="normal" title="Voir"/>
                                         <connections>
                                             <action selector="onButtonTapped:" destination="aM3-OQ-miR" eventType="touchUpInside" id="qxS-gr-4fQ"/>
                                         </connections>
