@@ -6,35 +6,46 @@
   Copyright © 2016 Benoît Lévesque. All rights reserved.
 */
 
-"Add a participant" = "Ajouter un participant";
-"First name and last name require." = "Prénom et nom de famille requis.";
-"First name" = "Prénom";
-"Last name" = "Nom de famille";
-"NIP" = "NIP";
-"Add" = "Ajouter";
-"Cancel" = "Annuler";
+/* Participants Table */
 
-" can't pick..." = " ne peut piger...";
+/* Participant setup */
+"new_participant" = "Nouveau";
+"infos" = "Informations";
+"cant_pick" = "ne peut piger...";
 
-"Close" = "Fermer";
-"You picked..." = "Vous avez pigé...";
-"Locked" = "Verrouiller";
-"Re-enter your nip." = "Entrez votre nip à nouveau.";
+// Cells
+"firstname" = "Prénom";
+"firstname_placeholder" = "Entrer le prénom";
+"lastname" = "Nom de famille";
+"lastname_placholder" = "Entrer le nom de famille";
+"nip" = "Code";
+"nip_placeholder" = "Entrer le code";
 
-"Protected" = "Protéger";
-"Enter your NIP" = "Entrez le NIP";
-"Enter" = "Entrer";
+/* Hide View */
+"not_enough" = "Pas tout à fait...";
+"see_results" = "Les résultats sont prêts !";
 
-"Warning" = "Attention";
-"First name and last name must not be empty." = "Le prénom et le nom de famille ne doivent pas être vides.";
+"is" = "est";
+"are" = "sont";
+"registered" = "enregistré(s)";
+"you_need" = "vous en avez besoin";
+"more" = "autre(s)";
 
-"Draw lots" = "Tirez au sort";
-" participants are registered." = " participants sont enregistrés.";
-" participant is registered." = " participant est enregistré.";
-"Register 3 or more participants. Currently, " = "Enregistrez 3 participants ou plus. Présentement, ";
-"Roll !" = "Lancez !";
+/* Alert controller */
+"ok" = "OK";
+"cancel" = "Annuler";
 
-"Roll finished !" = "Pige terminé !";
-"All set up !" = "C'est prêt !";
-"Continue" = "Continuer";
-"Not secret" = "Non secret";
+// Error
+"title_s" = "Il y a une erreur";
+"title_p" = "Il y a des erreurs";
+"message_default" = "Oups... Une erreur s'est produite...";
+
+// Picked
+"pick" = "Vous avez pigé...";
+
+// Prompt nip
+"nip_title" = "Entrer votre code...";
+"nip_message" = "Est-ce vraiment votre nom ? 🤓";
+"nip_placeholder" = "Code";
+"button_ok" = "C'est bien moi !";
+"button_cancel" = "Je sors...";

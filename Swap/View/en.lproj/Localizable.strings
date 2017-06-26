@@ -6,35 +6,47 @@
   Copyright © 2016 Benoît Lévesque. All rights reserved.
 */
 
-"Add a participant" = "Add a participant";
-"First name and last name require." = "First name and last name require.";
-"First name" = "First name";
-"Last name" = "Last name";
-"NIP" = "NIP";
-"Add" = "Add";
-"Cancel" = "Cancel";
+/* Participants Table */
 
-" can't pick..." = " can't pick...";
+/* Participant setup */
+"new_participant" = "New participant";
+"infos" = "Participant infos";
+"cant_pick" = "Can't pick...";
 
-"Close" = "Close";
-"You picked..." = "You picked...";
-"Locked" = "Locked";
-"Re-enter your nip." = "Re-enter your nip.";
+// Cells
+"firstname" = "Firstname";
+"firstname_placeholder" = "Enter your firstname";
+"lastname" = "Lastname";
+"lastname_placholder" = "Enter your lastname";
+"nip" = "NIP";
+"nip_placeholder" = "Enter your nip";
 
-"Protected" = "Protected";
-"Enter your NIP" = "Enter your NIP";
-"Enter" = "Enter";
+/* Hide View */
+"not_enough" = "Not quite...";
+"see_results" = "Let's see the results !";
 
-"Warning" = "Warning";
-"First name and last name must not be empty." = "First name and last name must not be empty.";
+"is" = "is";
+"are" = "are";
+"registered" = "registered";
+"you_need" = "you need";
+"more" = "more";
 
-"Draw lots" = "Draw lots";
-" participants are registered." = " participants are registered.";
-" participant is registered." = " participant est enregistré.";
-"Register 3 or more participants. Currently, " = "Register 3 or more participant. Currently, ";
-"Roll !" = "Roll !";
+/* Alert controller */
+"ok" = "OK";
+"cancel" = "Cancel";
 
-"Roll finished !" = "Roll finished !";
-"All set up !" = "All set up !";
-"Continue" = "Continue";
-"Not secret" = "Not secret";
+// Error
+"title_s" = "There was an error";
+"title_p" = "There were some errors";
+"message_default" = "Oops... Some error occured...";
+
+// Picked
+"pick" = "You pick...";
+
+// Prompt nip
+"nip_title" = "Enter your nip...";
+"nip_message" = "You can spoof other people you know... 🤓";
+"nip_placeholder" = "NIP";
+"button_ok" = "It's me, I promise !";
+"button_cancel" = "I'll show myself out...";
+

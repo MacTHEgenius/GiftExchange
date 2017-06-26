@@ -36,9 +36,9 @@ extension ParticipantSetUpDataSource: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            return "Participant infos"
+            return "infos".localized
         }
-        return "Can't pick..."
+        return "cant_pick".localized
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

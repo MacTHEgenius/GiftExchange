@@ -38,7 +38,7 @@ extension ResultsTableViewDelegate: UITableViewDelegate {
         let picked = self.results[picker]!
         
         var completion: UIAlertController = ErrorAlertDirector.error()
-        let alert = PromptNipAlertDirectory.enterNip { (nip) in
+        let alert = PromptNipAlertDirector.enterNip { (nip) in
             self.parent.dismiss(animated: true)
             completion = (picker.nip == nip) ? PickedAlertDirector.picked(picked, completion: nil) : ErrorAlertDirector.error(with: "Nip is incorrect.")
             self.parent.present(completion, animated: true)

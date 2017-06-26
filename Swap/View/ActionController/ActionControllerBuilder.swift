@@ -53,14 +53,14 @@ class ActionControllerBuilder: ActionControllerBuildable {
 		let action = UIAlertAction(title: title, style: style, handler: handler)
 		self.actionControllerToBuild.addAction(action)
 	}
-	
+    
 	func setCancelAction() {
-		let action = UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil)
+		let action = UIAlertAction(title: "cancel".localized, style: .cancel, handler: nil)
 		self.actionControllerToBuild.addAction(action)
 	}
 	
 	func setOKAction(_ handler: ((UIAlertAction) -> Void)? = nil) {
-		let action = UIAlertAction(title: "OK", style: .cancel, handler: handler)
+		let action = UIAlertAction(title: "ok".localized, style: .cancel, handler: handler)
 		self.actionControllerToBuild.addAction(action)
 	}
 	
@@ -87,68 +87,6 @@ class ActionControllerBuilder: ActionControllerBuildable {
 	
 	func itself() -> UIAlertController {
 		return self.actionControllerToBuild
-	}
-	
-}
-
-class ActionControllerBuildDirector {
-	
-	static func constructAddParticipant(withHandler handler: @escaping (String, String) -> Void) -> UIAlertController {
-		let builder = ActionControllerBuilder()
-		
-		builder.title = "Add a participant".localized
-		builder.message = "First name and last name require.".localized
-		
-		builder.setAction(withTitle: "Add".localized, actionStyle: .default) { (alert) in
-			let textFieldName = builder.itself().textFields![0] as UITextField
-			let textFieldNip = builder.itself().textFields![1] as UITextField
-			handler(textFieldName.text!, textFieldNip.text!)
-		}
-		builder.setCancelAction()
-		builder.setTextField(withPlaceholder: "First name".localized + " / " + "Last name".localized)
-		builder.setTextFieldForNip(withPlaceholder: "NIP".localized)
-		
-		return builder.build()
-	}
-	
-	static func constructNip(withHandler handler: @escaping (_ nip: String) -> Void) -> UIAlertController {
-		let builder = ActionControllerBuilder()
-		builder.title = "Protected".localized
-		builder.message = "Enter your NIP".localized
-		builder.setTextFieldForNip(withPlaceholder: "NIP")
-		builder.setAction(withTitle: "Enter".localized, actionStyle: .default) { (alertAction) in
-			let textField = builder.itself().textFields![0] as UITextField
-			handler(textField.text!)
-		}
-		builder.setCancelAction()
-		
-		return builder.build()
-	}
-	
-	static func constructLocked() -> UIAlertController {
-		let builder = ActionControllerBuilder()
-		builder.title = "Locked".localized
-		builder.message = "Re-enter your nip.".localized
-		builder.setOKAction()
-		return builder.build()
-	}
-	
-	static func constructWarning(_ message: String) -> UIAlertController {
-		let builder = ActionControllerBuilder()
-		builder.title = "Warning".localized
-		builder.message = message
-		builder.setOKAction()
-		return builder.build()
-	}
-	
-	static func constructTest() -> UIAlertController {
-		let builder = ActionControllerBuilder()
-		
-		builder.title = "Hello, UIActionController"
-		builder.message = "This is a test"
-		builder.setCancelAction()
-		
-		return builder.build()
 	}
 	
 }
