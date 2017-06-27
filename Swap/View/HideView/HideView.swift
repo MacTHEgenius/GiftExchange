@@ -11,8 +11,8 @@ import UIKit
 class HideView: UIView {
     
     struct Title {
-        static let notQuite = "Not quite..."
-        static let letsSee = "Let's see the results !"
+        static let notQuite = "not_enough".localized
+        static let letsSee = "see_results".localized
     }
     
     // MARK: - IBOutlets
@@ -39,9 +39,9 @@ class HideView: UIView {
     
     func updateView(_ count: Int) {
         self.title.text = count >= 3 ? Title.letsSee : Title.notQuite
-        self.caption.text = "participant".pluralize(count) + " \(count != 1 ? "are" : "is") registered"
+        self.caption.text = "participant".pluralize(count) + " \(count != 1 ? "are".localized : "is".localized) " + "registered".localized
         if count < 3 {
-            self.caption.text! += ", you need \(3 - count) more"
+            self.caption.text! += ", \("you need".localized) \(3 - count) more"
             self.seeButton.active = false
         }
     }

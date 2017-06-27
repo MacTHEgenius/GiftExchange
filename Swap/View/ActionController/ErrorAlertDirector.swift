@@ -12,16 +12,16 @@ import UIKit
 class ErrorAlertDirector {
     
     struct Title {
-        static let errors = "There were some errors"
-        static let error = "There was an error"
+        static let errors = "title_p".localized
+        static let error = "title_s".localized
     }
     
     struct Message {
-        static let `default` = "Oops... Some error occured..."
+        static let `default` = "message_default".localized;
     }
     
     struct Button {
-        static let ok = "OK"
+        static let ok = "ok".localized
     }
     
     static func errors(with errors: [String]) -> UIAlertController {

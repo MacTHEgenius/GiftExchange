@@ -26,11 +26,11 @@ class FirstnameBuilder: CellBuildable {
     }
     
     func label() {
-        self.cell.nameLabel.text = "Firstname"
+        self.cell.nameLabel.text = "firstname".localized
     }
     
     func placeholder() {
-        self.cell.nameTextField.placeholder = "Enter your firstname"
+        self.cell.nameTextField.placeholder = "firstname_placeholder".localized
     }
     
     func entry() {
@@ -43,11 +43,11 @@ class FirstnameBuilder: CellBuildable {
 class LastnameBuilder: FirstnameBuilder {
     
     override func label() {
-        self.cell.nameLabel.text = "Lastname"
+        self.cell.nameLabel.text = "lastname".localized
     }
     
     override func placeholder() {
-        self.cell.nameTextField.placeholder = "Enter your lastname"
+        self.cell.nameTextField.placeholder = "lastname_placholder".localized
     }
     
 }
@@ -62,11 +62,11 @@ class NipBuilder: CellBuildable {
     }
     
     func label() {
-        self.cell.nameLabel.text = "NIP"
+        self.cell.nameLabel.text = "nip".localized
     }
     
     func placeholder() {
-        self.cell.nameTextField.placeholder = "Enter your NIP"
+        self.cell.nameTextField.placeholder = "nip_placeholder".localized
     }
     
     func entry() {

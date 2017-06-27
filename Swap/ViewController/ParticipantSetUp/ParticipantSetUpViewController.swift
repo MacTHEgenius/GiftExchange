@@ -24,7 +24,7 @@ class ParticipantSetUpViewController: UITableViewController {
             if let participant = controller.participant {
                 self.title = participant.firstName
             } else {
-                self.title = "New participant"
+                self.title = "new_participant".localized
             }
         }
         
