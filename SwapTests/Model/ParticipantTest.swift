@@ -46,7 +46,7 @@ class ParticipantTest: XCTestCase {
         let canPickDict = ["hello": true, "world": false, "!": true]
         let participant = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip, cantPick: canPickDict)
         
-        XCTAssertEqual(participant.cantPick, ["hello", "!"])
+        XCTAssertEqual(participant.cantPick.sorted(), ["hello", "!"].sorted())
     }
     
     // MARK: - CanPick:participant tests
@@ -109,7 +109,7 @@ class ParticipantTest: XCTestCase {
         old.update(new)
         
         XCTAssertEqual(old.cantPick, new.cantPick)
-        XCTAssertEqual(new.cantPick, ["hello", "!"])
+        XCTAssertEqual(new.cantPick.sorted(), ["hello", "!"].sorted())
     }
     
     // MARK: - Validate tests
