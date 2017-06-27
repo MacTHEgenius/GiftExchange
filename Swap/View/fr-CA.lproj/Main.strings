@@ -1,0 +1,27 @@
+
+/* Class = "UITabBarItem"; title = "Participants"; ObjectID = "0lm-u6-2m9"; */
+"0lm-u6-2m9.title" = "Participants";
+
+/* Class = "UIButton"; normalTitle = "Voir"; ObjectID = "5sF-gB-ysV"; */
+"5sF-gB-ysV.normalTitle" = "Voir";
+
+/* Class = "UIViewController"; title = "Swap"; ObjectID = "Cbz-bn-1WM"; */
+"Cbz-bn-1WM.title" = "Swap";
+
+/* Class = "UITabBarItem"; title = "Échange"; ObjectID = "OzI-hw-Atp"; */
+"OzI-hw-Atp.title" = "Échange";
+
+/* Class = "UITextField"; placeholder = "Placeholder"; ObjectID = "SGH-dX-Svw"; */
+"SGH-dX-Svw.placeholder" = "Placeholder";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "UTE-LR-CLA"; */
+"UTE-LR-CLA.text" = "Label";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "VWe-XZ-DB6"; */
+"VWe-XZ-DB6.text" = "Title";
+
+/* Class = "UILabel"; text = "Results are here"; ObjectID = "ZQ3-BU-vQg"; */
+"ZQ3-BU-vQg.text" = "Results are here";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "xXY-br-VuG"; */
+"xXY-br-VuG.text" = "Label";
