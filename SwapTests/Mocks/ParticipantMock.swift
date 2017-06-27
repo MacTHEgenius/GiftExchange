@@ -7,7 +7,7 @@
 //
 
 import Foundation
-@testable import GiftExchange
+@testable import Swap
 
 class ParticipantMock: Participant {
     

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import GiftExchange
+@testable import Swap
 
 class ParticipantControllerTest: XCTestCase {
     
