@@ -19,7 +19,9 @@
 "lastname" = "Lastname";
 "lastname_placholder" = "Enter your lastname";
 "nip" = "NIP";
-"nip_placeholder" = "Enter your nip";
+"nip_placeholder_enter" = "Enter your nip";
+"nip_confirm" = "NIP confirm";
+"nip_confirm_placeholder" = "Confirm your nip";
 
 /* Hide View */
 "not_enough" = "Not quite...";

@@ -54,19 +54,21 @@ class LastnameBuilder: FirstnameBuilder {
 
 class NipBuilder: CellBuildable {
     var cell: InfoCell
+    var confirmation: Bool
     
-    init(with cell: InfoCell, and value: String? = nil) {
+    init(with cell: InfoCell, and value: String? = nil, confirmation: Bool = false) {
         self.cell = cell
         self.cell.value = value
         self.cell.selectionStyle = .none
+        self.confirmation = confirmation
     }
     
     func label() {
-        self.cell.nameLabel.text = "nip".localized
+        self.cell.nameLabel.text = self.confirmation ? "nip_confirm".localized : "nip".localized
     }
     
     func placeholder() {
-        self.cell.nameTextField.placeholder = "nip_placeholder".localized
+        self.cell.nameTextField.placeholder = self.confirmation ? "nip_confirm_placeholder".localized : "nip_placeholder_enter".localized
     }
     
     func entry() {

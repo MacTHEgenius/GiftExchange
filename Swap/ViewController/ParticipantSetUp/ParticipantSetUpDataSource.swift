@@ -30,7 +30,7 @@ class ParticipantSetUpDataSource: NSObject {
 extension ParticipantSetUpDataSource: UITableViewDataSource {
     
     struct Const {
-        static let numberOfRowsInNameSection = 3
+        static let numberOfRowsInNameSection = 4
         static let section = 2
     }
     
@@ -71,8 +71,8 @@ extension ParticipantSetUpDataSource: UITableViewDataSource {
         } else if indexPath.row == 1 {
             builder = LastnameBuilder(with: cell, and: self.participant?.lastName)
             self.lastnameCell = cell
-        } else if indexPath.row == 2 {
-            builder = NipBuilder(with: cell, and: self.participant?.nip)
+        } else if indexPath.row >= 2 {
+            builder = NipBuilder(with: cell, and: self.participant?.nip, confirmation: indexPath.row == 3)
             self.nipCell = cell
         }
         
