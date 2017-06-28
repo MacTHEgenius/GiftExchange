@@ -14,6 +14,7 @@ class Participant: NSObject, Validable {
     private(set) var firstName: String
     private(set) var lastName: String
     private(set) var nip: String
+    private(set) var confirmation: String
     private(set) var chosen: Bool
     private var cannotPick: [String] {
         willSet {
@@ -45,12 +46,13 @@ class Participant: NSObject, Validable {
         return self.id.hashValue
     }
     
-    init(with firstname: String, and lastName: String, nip: String, cantPick: [String:Bool] = [:]) {
+    init(with firstname: String, and lastName: String, nip: String, confirmation: String, cantPick: [String:Bool] = [:]) {
         let id = UUID().uuidString
         self.id = id
         self.firstName = firstname
         self.lastName = lastName
         self.nip = nip
+        self.confirmation = confirmation
         self.chosen = false
         
         let temp = cantPick.map({ (key, value) in value ? key : "" })
@@ -62,6 +64,7 @@ class Participant: NSObject, Validable {
         self.firstName = aDecoder.decodeObject(forKey: "firstName") as! String
         self.lastName = aDecoder.decodeObject(forKey: "lastName") as! String
         self.nip = aDecoder.decodeObject(forKey: "nip") as! String
+        self.confirmation = aDecoder.decodeObject(forKey: "confirmation") as! String
         self.cannotPick = aDecoder.decodeObject(forKey: "cantPick") as! [String]
         self.chosen = aDecoder.decodeBool(forKey: "chosen")
     }
@@ -71,6 +74,7 @@ class Participant: NSObject, Validable {
         aCoder.encode(self.firstName, forKey: "firstName")
         aCoder.encode(self.lastName, forKey: "lastName")
         aCoder.encode(self.nip, forKey: "nip")
+        aCoder.encode(self.confirmation, forKey: "confirmation")
         aCoder.encode(self.cannotPick, forKey: "cantPick")
         aCoder.encode(self.chosen, forKey: "chosen")
     }
@@ -98,6 +102,7 @@ class Participant: NSObject, Validable {
         _ = Validate("firstname", of: self).presence(of: self.firstName)
         _ = Validate("lastname", of: self).presence(of: self.lastName)
         _ = Validate("NIP", of: self).presence(of: self.nip).length(of: self.nip, min: 4, max: 6)
+        _ = Validate("NIP confirm", of: self).presence(of: self.confirmation).value(self.confirmation, isTheSameAs: self.nip, from: "NIP")
     }
     
 }

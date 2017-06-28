@@ -35,6 +35,11 @@ class Validate {
         return self.execute(rule, error: .stringLength(field: self.field, short: n < min, maxOrMin: n >= min ? max : min, current: n))
     }
     
+    func value(_ value: String, isTheSameAs otherValue: String, from field: String) -> Validate {
+        let rule = (value == otherValue)
+        return self.execute(!rule, error: .isTheSame(field1: self.field, field2: field))
+    }
+    
     func customRule(errorMessage msg: String, _ rule: () -> Bool) -> Validate {
         return self.execute(!rule(), error: .custom(msg: msg))
     }
@@ -51,13 +56,19 @@ class Validate {
 enum ValidationError: Error {
     case blank(field: String)
     case stringLength(field: String, short: Bool, maxOrMin: Int, current: Int)
+    case isTheSame(field1: String, field2: String)
     case custom(msg: String)
     
     var localizedDescription: String {
         switch self {
-            case .blank(let field): return "\(field.capitalized) cannot be blank."
-        case .stringLength(let field, let short, let maxOrMin, let current): return "\(field.capitalized) is too \(short ? "short" : "long"). (You have \("character".pluralize(current)), \(short ? "minimum" : "maximum") is \(maxOrMin))"
-            case .custom(let msg):  return msg
+        case .blank(let field):
+            return "\(field.capitalized) cannot be blank."
+        case .stringLength(let field, let short, let maxOrMin, let current):
+            return "\(field.capitalized) is too \(short ? "short" : "long"). (You have \("character".pluralize(current)), \(short ? "minimum" : "maximum") is \(maxOrMin))"
+        case .isTheSame(let field1, let field2):
+            return "\(field1.capitalized) and \(field2) does not match."
+        case .custom(let msg):
+            return msg
         }
     }
 }

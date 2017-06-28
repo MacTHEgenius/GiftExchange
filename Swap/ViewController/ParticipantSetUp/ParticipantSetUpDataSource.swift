@@ -17,6 +17,7 @@ class ParticipantSetUpDataSource: NSObject {
     var firstnameCell: InfoCell?
     var lastnameCell: InfoCell?
     var nipCell: InfoCell?
+    var nipConfirmationCell: InfoCell?
     
     init(_ tableView: UITableView, controller: ParticipantController) {
         self.controller = controller
@@ -65,15 +66,20 @@ extension ParticipantSetUpDataSource: UITableViewDataSource {
         let director = CellDirector()
         var builder: CellBuildable?
         
-        if indexPath.row == 0 {
+        switch indexPath.row {
+        case 0:
             builder = FirstnameBuilder(with: cell, and: self.participant?.firstName)
             self.firstnameCell = cell
-        } else if indexPath.row == 1 {
+        case 1:
             builder = LastnameBuilder(with: cell, and: self.participant?.lastName)
             self.lastnameCell = cell
-        } else if indexPath.row >= 2 {
-            builder = NipBuilder(with: cell, and: self.participant?.nip, confirmation: indexPath.row == 3)
+        case 2:
+            builder = NipBuilder(with: cell, and: self.participant?.nip)
             self.nipCell = cell
+        case 3:
+            builder = NipBuilder(with: cell, and: self.participant?.nip, confirmation: true)
+            self.nipConfirmationCell = cell
+        default: break
         }
         
         return director.build(builder: builder!)
