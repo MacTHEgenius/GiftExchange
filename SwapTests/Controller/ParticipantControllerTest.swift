@@ -12,12 +12,12 @@ import XCTest
 class ParticipantControllerTest: XCTestCase {
     
     private struct Constant {
-        static let other = ParticipantMock(with: "otherFirst", and: "otherLast", nip: "1234")
+        static let other = ParticipantMock(with: "otherFirst", and: "otherLast", nip: "1234", confirmation: "1234")
         
         static let update = "update"
     }
     
-    private let participant = ParticipantMock(with: "first", and: "last", nip: "1234")
+    private let participant = ParticipantMock(with: "first", and: "last", nip: "1234", confirmation: "1234")
     private let parent = ParticipantsControllerMock()
     private var controller: ParticipantController!
     
@@ -49,7 +49,7 @@ class ParticipantControllerTest: XCTestCase {
     }
     
     func testSave_ShouldThrowNotValidError_WithInvalidFirstName() {
-        let participantToUpdate = ParticipantMock(with: Constant.update, and: Constant.update, nip: Constant.update)
+        let participantToUpdate = ParticipantMock(with: Constant.update, and: Constant.update, nip: Constant.update, confirmation: Constant.update)
         let expected = participantToUpdate.setUpValidateAreInvalid(first: true)
         
         XCTAssertThrowsError(try self.controller.save(participantToUpdate), "save() did not throw error, but was supposed to.") { (error) in
@@ -58,7 +58,7 @@ class ParticipantControllerTest: XCTestCase {
     }
     
     func testSave_ShouldThrowNotValidError_WithInvalidLastName() {
-        let participantToUpdate = ParticipantMock(with: Constant.update, and: Constant.update, nip: Constant.update)
+        let participantToUpdate = ParticipantMock(with: Constant.update, and: Constant.update, nip: Constant.update, confirmation: Constant.update)
         let expected = participantToUpdate.setUpValidateAreInvalid(last: true)
         
         XCTAssertThrowsError(try self.controller.save(participantToUpdate), "save() did not throw error, but was supposed to.") { (error) in
@@ -67,8 +67,17 @@ class ParticipantControllerTest: XCTestCase {
     }
     
     func testSave_ShouldThrowNotValidError_WithInvalidNip() {
-        let participantToUpdate = ParticipantMock(with: Constant.update, and: Constant.update, nip: Constant.update)
+        let participantToUpdate = ParticipantMock(with: Constant.update, and: Constant.update, nip: Constant.update, confirmation: Constant.update)
         let expected = participantToUpdate.setUpValidateAreInvalid(nip: true)
+        
+        XCTAssertThrowsError(try self.controller.save(participantToUpdate), "save() did not throw error, but was supposed to.") { (error) in
+            XCTAssertEqual(error as! ParticipantError, ParticipantError.notValid(errors: expected))
+        }
+    }
+    
+    func testSave_ShouldThrowNotValidError_WithInvalidNipConfirmation() {
+        let participantToUpdate = ParticipantMock(with: Constant.update, and: Constant.update, nip: Constant.update, confirmation: Constant.update)
+        let expected = participantToUpdate.setUpValidateAreInvalid(confirmation: true)
         
         XCTAssertThrowsError(try self.controller.save(participantToUpdate), "save() did not throw error, but was supposed to.") { (error) in
             XCTAssertEqual(error as! ParticipantError, ParticipantError.notValid(errors: expected))

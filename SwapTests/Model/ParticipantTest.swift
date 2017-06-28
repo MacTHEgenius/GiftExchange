@@ -16,10 +16,12 @@ class ParticipantTest: XCTestCase {
         static let defaultLn = "Levesque"
         static let defaultF = "\(Constants.defaultFn) \(Constants.defaultLn)"
         static let defaultNip = "1234"
+        static let defaultConfirmation = "1234"
         
         static let otherFn = "Other"
         static let otherLn = "Name"
         static let otherNip = "5678"
+        static let otherConfirmation = "5678"
         
         static let notPresent = ""
         static let nipTooShort = "123"
@@ -35,7 +37,7 @@ class ParticipantTest: XCTestCase {
     }
     
     func testFullname() {
-        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip)
+        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip, confirmation: Constants.defaultConfirmation)
         
         let fullname = participant.fullname
         
@@ -44,7 +46,7 @@ class ParticipantTest: XCTestCase {
     
     func testCanPickDictionaryParsingWhenInitiliaze() {
         let canPickDict = ["hello": true, "world": false, "!": true]
-        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip, cantPick: canPickDict)
+        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip, confirmation: Constants.defaultConfirmation, cantPick: canPickDict)
         
         XCTAssertEqual(participant.cantPick.sorted(), ["hello", "!"].sorted())
     }
@@ -52,8 +54,8 @@ class ParticipantTest: XCTestCase {
     // MARK: - CanPick:participant tests
     
     func testCantPickWithPickableParticipant() {
-        let participantToPick = Participant(with: Constants.otherFn, and: Constants.otherLn, nip: Constants.defaultNip)
-        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip, cantPick: [participantToPick.id:false])
+        let participantToPick = Participant(with: Constants.otherFn, and: Constants.otherLn, nip: Constants.defaultNip, confirmation: Constants.defaultConfirmation)
+        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip, confirmation: Constants.defaultConfirmation, cantPick: [participantToPick.id:false])
         
         let canPick = participant.canPick(participantToPick)
         
@@ -61,8 +63,8 @@ class ParticipantTest: XCTestCase {
     }
     
     func testCantPickWithUnpickableParticipant() {
-        let participantToPick = Participant(with: Constants.otherFn, and: Constants.otherLn, nip: Constants.defaultNip)
-        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip, cantPick: [participantToPick.id:true])
+        let participantToPick = Participant(with: Constants.otherFn, and: Constants.otherLn, nip: Constants.defaultNip, confirmation: Constants.defaultConfirmation)
+        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip, confirmation: Constants.defaultConfirmation, cantPick: [participantToPick.id:true])
         
         let canPick = participant.canPick(participantToPick)
         
@@ -72,8 +74,8 @@ class ParticipantTest: XCTestCase {
     // MARK: - Update tests
     
     func testUpdateWithFirstnameUpdated() {
-        let old = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip)
-        let new = Participant(with: Constants.otherFn, and: Constants.defaultLn, nip: Constants.defaultNip)
+        let old = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip, confirmation: Constants.defaultConfirmation)
+        let new = Participant(with: Constants.otherFn, and: Constants.defaultLn, nip: Constants.defaultNip, confirmation: Constants.defaultConfirmation)
         
         old.update(new)
         
@@ -82,8 +84,8 @@ class ParticipantTest: XCTestCase {
     }
     
     func testUpdateWithLastnameUpdated() {
-        let old = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip)
-        let new = Participant(with: Constants.defaultFn, and: Constants.otherLn, nip: Constants.defaultNip)
+        let old = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip, confirmation: Constants.defaultConfirmation)
+        let new = Participant(with: Constants.defaultFn, and: Constants.otherLn, nip: Constants.defaultNip, confirmation: Constants.defaultConfirmation)
         
         old.update(new)
         
@@ -92,8 +94,8 @@ class ParticipantTest: XCTestCase {
     }
     
     func testUpdateWithNipUpdated() {
-        let old = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip)
-        let new = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.otherNip)
+        let old = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip, confirmation: Constants.defaultConfirmation)
+        let new = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.otherNip, confirmation: Constants.otherConfirmation)
         
         old.update(new)
         
@@ -103,8 +105,8 @@ class ParticipantTest: XCTestCase {
     
     func testUpdateWithCanPickUpdated() {
         let canPickDict = ["hello": true, "world": false, "!": true]
-        let old = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip)
-        let new = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.otherNip, cantPick: canPickDict)
+        let old = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip, confirmation: Constants.defaultConfirmation)
+        let new = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.otherNip, confirmation: Constants.otherConfirmation, cantPick: canPickDict)
         
         old.update(new)
         
@@ -115,7 +117,7 @@ class ParticipantTest: XCTestCase {
     // MARK: - Validate tests
     
     func testValidateWithValidParticipant() {
-        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip)
+        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultLn, nip: Constants.defaultNip, confirmation: Constants.defaultConfirmation)
         
         let isValid = participant.valid
         
@@ -123,7 +125,7 @@ class ParticipantTest: XCTestCase {
     }
     
     func testValidateWithFirstnameNotPresent() {
-        let participant = Participant(with: Constants.notPresent, and: Constants.defaultLn, nip: Constants.defaultNip)
+        let participant = Participant(with: Constants.notPresent, and: Constants.defaultLn, nip: Constants.defaultNip, confirmation: Constants.defaultConfirmation)
         
         let isValid = participant.valid
         
@@ -132,7 +134,7 @@ class ParticipantTest: XCTestCase {
     }
     
     func testValidateWithLastnameNotPresent() {
-        let participant = Participant(with: Constants.defaultFn, and: Constants.notPresent, nip: Constants.defaultNip)
+        let participant = Participant(with: Constants.defaultFn, and: Constants.notPresent, nip: Constants.defaultNip, confirmation: Constants.defaultConfirmation)
         
         let isValid = participant.valid
         
@@ -141,7 +143,7 @@ class ParticipantTest: XCTestCase {
     }
     
     func testValidateWithNipNotPresent() {
-        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultFn, nip: Constants.notPresent)
+        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultFn, nip: Constants.notPresent, confirmation: Constants.notPresent)
         
         let isValid = participant.valid
         
@@ -150,7 +152,7 @@ class ParticipantTest: XCTestCase {
     }
     
     func testValidateWithNipTooShort() {
-        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultFn, nip: Constants.nipTooShort)
+        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultFn, nip: Constants.nipTooShort, confirmation: Constants.nipTooShort)
         
         let isValid = participant.valid
         
@@ -159,7 +161,7 @@ class ParticipantTest: XCTestCase {
     }
     
     func testValidateWithNipTooLong() {
-        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultFn, nip: Constants.nipTooLong)
+        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultFn, nip: Constants.nipTooLong, confirmation: Constants.nipTooLong)
         
         let isValid = participant.valid
         
@@ -167,10 +169,28 @@ class ParticipantTest: XCTestCase {
         XCTAssertEqual(participant.errors[0], "Nip is too long. (You have 7 characters, maximum is 6)")
     }
     
+    func testValidateWithNipConfirmationNotPresent() {
+        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultFn, nip: Constants.defaultNip, confirmation: Constants.notPresent)
+        
+        let isValid = participant.valid
+        
+        XCTAssertFalse(isValid, "isValid should be falsy")
+        XCTAssertEqual(participant.errors[0], "Nip Confirm cannot be blank.")
+    }
+    
+    func testValidateWithNipConfirmationAndNipNotMatched() {
+        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultFn, nip: Constants.defaultNip, confirmation: Constants.otherConfirmation)
+        
+        let isValid = participant.valid
+        
+        XCTAssertFalse(isValid, "isValid should be falsy")
+        XCTAssertEqual(participant.errors[0], "Nip Confirm and NIP does not match.")
+    }
+    
     // MARK: - == tests
     
     func testEqualParticipantWithSameParticipant() {
-        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultFn, nip: Constants.nipTooLong)
+        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultFn, nip: Constants.nipTooLong, confirmation: Constants.nipTooLong)
         let sameParticipant = participant
         let (_, _) = (participant.hashValue, participant.description)
         
@@ -178,8 +198,8 @@ class ParticipantTest: XCTestCase {
     }
     
     func testEqualParticipantWithDifferentParticipant() {
-        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultFn, nip: Constants.nipTooLong)
-        let differentParticipant = Participant(with: Constants.defaultFn, and: Constants.defaultFn, nip: Constants.nipTooLong)
+        let participant = Participant(with: Constants.defaultFn, and: Constants.defaultFn, nip: Constants.nipTooLong, confirmation: Constants.nipTooLong)
+        let differentParticipant = Participant(with: Constants.defaultFn, and: Constants.defaultFn, nip: Constants.nipTooLong, confirmation: Constants.nipTooLong)
         
         XCTAssertFalse(participant == differentParticipant, "\(participant) and \(differentParticipant) are not equals")
     }

@@ -27,10 +27,11 @@ class ParticipantMock: Participant {
         self.validateCalled = false
     }
     
-    func setUpValidateAreInvalid(first: Bool = false, last: Bool = false, nip: Bool = false) -> [String] {
+    func setUpValidateAreInvalid(first: Bool = false, last: Bool = false, nip: Bool = false, confirmation: Bool = false) -> [String] {
         if first { self.errors.append("first invalid") }
         if last { self.errors.append("last invalid") }
         if nip { self.errors.append("nip invalid") }
+        if confirmation { self.errors.append("confirmation invalid") }
         
         return self.errors
     }
