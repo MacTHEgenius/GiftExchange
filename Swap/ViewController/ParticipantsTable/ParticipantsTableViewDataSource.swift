@@ -44,10 +44,8 @@ extension ParticipantsTableViewDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             self.participantsController.remove(at: indexPath.row)
-        } else if editingStyle == .insert {
-            
         }
-        tableView.reloadRows(at: [indexPath], with: .fade)
+        tableView.deleteRows(at: [indexPath], with: .fade)
     }
     
 }
