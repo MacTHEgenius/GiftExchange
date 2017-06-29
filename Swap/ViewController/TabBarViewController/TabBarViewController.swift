@@ -21,6 +21,8 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         self.delegate = self
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateParticipantsBadge), name: NSNotification.Name(ParticipantsController.Notification.participantsCountDidChanged), object: nil)
+        
         if let participants = self.viewControllers![0].childViewControllers[0] as? ParticipantsTableViewController, let results = self.viewControllers![1] as? ResultsViewController, let controller = self.participantsController {
             participants.participantsController = controller
             results.participantsController = controller
@@ -41,6 +43,12 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
             }
         }
         return true
+    }
+    
+    func updateParticipantsBadge() {
+        if let controller = self.participantsController {
+            self.tabBar.items![0].badgeValue = "\(controller.participants.count)"
+        }
     }
 
 }

@@ -12,6 +12,10 @@ import Foundation
 
 class ParticipantsController {
     
+    struct Notification {
+        static let participantsCountDidChanged = "com.geniusprod.Swap.participantsCountDidChanged"
+    }
+    
     private static var participantsFilePath: String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/participants.txt"
     private var path: String?
     
@@ -27,7 +31,6 @@ class ParticipantsController {
     }
     
     private(set) var participants: [Participant] = {
-        
         if let participants = NSKeyedUnarchiver.unarchiveObject(withFile: ParticipantsController.participantsFilePath) as? [Participant]  {
             return participants
         } else {
@@ -49,10 +52,12 @@ class ParticipantsController {
     
     func add(_ participant: Participant) {
         self.participants.append(participant)
+        NotificationCenter.default.post(name: NSNotification.Name(Notification.participantsCountDidChanged), object: self)
     }
     
     func remove(at index: Int) {
         self.participants.remove(at: index)
+        NotificationCenter.default.post(name: NSNotification.Name(Notification.participantsCountDidChanged), object: self)
     }
     
     func update(old: Participant, with new: Participant) {
