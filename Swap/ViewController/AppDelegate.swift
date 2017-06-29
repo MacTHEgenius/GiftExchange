@@ -28,6 +28,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
 		// Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
         self.participantsController.save()
+        
+        if let tabBar = self.window?.rootViewController as? TabBarViewController, let result = tabBar.selectedViewController as? ResultsViewController {
+            result.dismiss(animated: false, completion: nil)
+            if result.topView.isHidden {
+                let viewController = UIViewController()
+                viewController.view.backgroundColor = UIColor(red: 76/255, green: 94/255, blue: 138/255, alpha: 1.0)
+                
+                let image = UIImage(named: "LaunchScreenIcon")
+                let imageView = UIImageView(image: image)
+                imageView.center = viewController.view.center
+                
+                viewController.view.addSubview(imageView)
+                
+                self.window?.rootViewController?.present(viewController, animated: false, completion: nil)
+            }
+            
+            if let swap = result.swap {
+                swap.reroll = false
+            }
+        }
+        
     }
 
 	func applicationDidEnterBackground(_ application: UIApplication) {
@@ -41,6 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func applicationDidBecomeActive(_ application: UIApplication) {
 		// Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        self.window?.rootViewController?.dismiss(animated: false, completion: nil)
 	}
 
 	func applicationWillTerminate(_ application: UIApplication) {
