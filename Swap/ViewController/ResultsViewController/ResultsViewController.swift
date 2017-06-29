@@ -36,14 +36,20 @@ class ResultsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if let controller = self.participantsController, let swap = self.swap {
-            let result = swap.roll()
+        if let swap = self.swap {
+            if let controller = self.participantsController, swap.reroll {
+                let result = swap.roll()
+                
+                self.topView.updateView(controller.participants.count)
+                self.dataSource?.updateData(participants: controller.firstNames)
+                self.delegate?.updateData(participants: controller.participants, newResults: result)
+                self.resultsTable.reloadData()
+            }
             
-            self.topView.updateView(controller.participants.count)
-            self.dataSource?.updateData(participants: controller.firstNames)
-            self.delegate?.updateData(participants: controller.participants, newResults: result)
-            self.resultsTable.reloadData()
+            swap.reroll = true
         }
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -51,7 +57,9 @@ class ResultsViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        self.topView.reset()
+        if let swap = self.swap, swap.reroll {
+            self.topView.reset()
+        }
     }
 
     override func didReceiveMemoryWarning() {

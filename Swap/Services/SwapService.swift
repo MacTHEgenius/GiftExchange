@@ -10,6 +10,8 @@ import Foundation
 
 class SwapService {
     
+    var reroll: Bool = true
+    
     private var participantsController: ParticipantsController
     
     init(participantController: ParticipantsController) {
