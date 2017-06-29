@@ -22,6 +22,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         self.delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.updateParticipantsBadge), name: NSNotification.Name(ParticipantsController.Notification.participantsCountDidChanged), object: nil)
+        self.updateParticipantsBadge()
         
         if let participants = self.viewControllers![0].childViewControllers[0] as? ParticipantsTableViewController, let results = self.viewControllers![1] as? ResultsViewController, let controller = self.participantsController {
             participants.participantsController = controller
