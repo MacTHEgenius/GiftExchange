@@ -47,8 +47,15 @@
 
 // Prompt nip
 "nip_title" = "Enter your nip...";
-"nip_message" = "You can spoof other people you know... 🤓";
+"nip_message" = "You can spoof other people, you know... 🤓";
 "nip_placeholder" = "NIP";
 "button_ok" = "It's me, I promise !";
 "button_cancel" = "I'll show myself out...";
+
+// Confirm
+"confirm_title_default" = "Are you sure ?";
+"confirm_title" = "Leave the swap ?";
+"button_leave" = "Leave";
+"confirm_message" = "The current results will be lost.";
+
 

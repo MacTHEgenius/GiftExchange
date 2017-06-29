@@ -19,7 +19,9 @@
 "lastname" = "Nom de famille";
 "lastname_placholder" = "Entrer le nom de famille";
 "nip" = "Code";
-"nip_placeholder" = "Entrer le code";
+"nip_placeholder_enter" = "Entrer le code";
+"nip_confirm" = "Confirmation";
+"nip_confirm_placeholder" = "Confirmer le code";
 
 /* Hide View */
 "not_enough" = "Pas tout à fait...";
@@ -49,3 +51,10 @@
 "nip_placeholder" = "Code";
 "button_ok" = "C'est bien moi !";
 "button_cancel" = "Je sors...";
+
+// Confirm
+"confirm_title_default" = "Are you sure ?";
+"confirm_title" = "Quitter l'échange ?";
+"button_leave" = "Quitter";
+"confirm_message" = "Les résultats seront perdus.";
+
