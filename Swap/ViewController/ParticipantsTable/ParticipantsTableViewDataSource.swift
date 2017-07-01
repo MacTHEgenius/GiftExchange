@@ -33,7 +33,9 @@ extension ParticipantsTableViewDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let participant = self.participantsController.participants[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: ParticipantCell.id, for: indexPath) as! ParticipantCell
-        cell.name = participant.firstName
+        cell.name = participant.fullname
+        cell.cantPick = ParticipantHelper.firstnames(of: self.participantsController.participants, for: participant)
+        
         return cell
     }
     

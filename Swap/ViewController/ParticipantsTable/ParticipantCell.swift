@@ -17,5 +17,11 @@ class ParticipantCell: UITableViewCell {
             self.textLabel?.text = self.name
         }
     }
+    
+    var cantPick: [String] = [] {
+        didSet {
+            self.detailTextLabel?.text = ParticipantCellHelper.detailLabel(names: self.cantPick)
+        }
+    }
 
 }
