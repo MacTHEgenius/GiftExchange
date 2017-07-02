@@ -10,7 +10,7 @@ import Foundation
 
 class ParticipantCellHelper {
     
-    class func detailLabel(names: [String]) -> String {
+    class func detailLabel(with names: [String]) -> String {
         var text: String
         if names.isEmpty {
             text = "Anyone 👍"

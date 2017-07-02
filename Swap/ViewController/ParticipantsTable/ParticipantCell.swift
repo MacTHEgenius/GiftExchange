@@ -20,7 +20,7 @@ class ParticipantCell: UITableViewCell {
     
     var cantPick: [String] = [] {
         didSet {
-            self.detailTextLabel?.text = ParticipantCellHelper.detailLabel(names: self.cantPick)
+            self.detailTextLabel?.text = ParticipantCellHelper.detailLabel(with: self.cantPick)
         }
     }
 
