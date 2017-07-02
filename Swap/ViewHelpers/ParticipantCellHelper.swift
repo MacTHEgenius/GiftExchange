@@ -12,17 +12,18 @@ class ParticipantCellHelper {
     
     class func detailLabel(with names: [String]) -> String {
         var text: String
-        if names.isEmpty {
+        
+        switch names.count {
+        case 0:
             text = "Anyone 👍"
-        } else {
-            let count = names.count
-            text = "🚫 "
-            if count <= 2 {
-                text += count == 2 ? "\(names.first!) & \(names.last!)" : "\(names.first!)"
-            } else {
-                text += "\(names.first!) & \("other".pluralize(count - 1))"
-            }
+        case 1:
+            text = "🚫 \(names.first!)"
+        case 2:
+            text = "🚫 \(names.first!) & \(names.last!)"
+        default:
+            text = "🚫 \(names.first!) & \("other".pluralize(names.count - 1))"
         }
+        
         return text
     }
     
