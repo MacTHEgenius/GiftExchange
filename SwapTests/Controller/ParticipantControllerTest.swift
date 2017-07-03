@@ -17,27 +17,39 @@ class ParticipantControllerTest: XCTestCase {
         static let update = "update"
     }
     
-    private let participant = ParticipantMock(with: "first", and: "last", nip: "1234", confirmation: "1234")
-    private let parent = ParticipantsControllerMock()
+    private var participant: ParticipantMock!
+    private var parent: ParticipantsControllerMock!
     private var controller: ParticipantController!
     
     override func setUp() {
         super.setUp()
+        self.participant = ParticipantMock(with: "first", and: "last", nip: "1234", confirmation: "1234")
+        self.parent = ParticipantsControllerMock()
         self.controller = ParticipantController(self.participant, parent: self.parent)
     }
     
-    func testPick_WithIsPickedTrue() {
-        let expected = [Constant.other.id: true]
+    func testToggle_withCurrentParticipant() {
+        let expected = [String]()
         
-        self.controller.doNotPick(Constant.other, isPicked: true)
+        self.controller.toggle(self.participant)
         
         XCTAssertEqual(self.controller.cantPick, expected)
     }
     
-    func testPick_WithIsPickedFalse() {
-        let expected = [Constant.other.id: false]
+    func testToggle_withParticipantNotPicked() {
+        let expected = [Constant.other.id]
         
-        self.controller.doNotPick(Constant.other, isPicked: false)
+        self.controller.toggle(Constant.other)
+        
+        XCTAssertEqual(self.controller.cantPick, expected)
+    }
+    
+    func testPick_withAlreadyParticipantPicked() {
+        let expected = [String]()
+        self.participant.cantPick = [Constant.other.id]
+        self.controller = ParticipantController(self.participant, parent: self.parent)
+        
+        self.controller.toggle(Constant.other)
         
         XCTAssertEqual(self.controller.cantPick, expected)
     }
