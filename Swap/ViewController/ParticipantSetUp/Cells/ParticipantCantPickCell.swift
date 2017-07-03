@@ -26,7 +26,7 @@ class ParticipantCantPickCell: UITableViewCell {
     
     func select() {
         self.check = !self.check
-        self.isSelected = false
+        self.setSelected(!self.isSelected, animated: true)
     }
 
 }

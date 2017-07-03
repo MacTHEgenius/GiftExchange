@@ -19,7 +19,7 @@ class ParticipantSetUpViewController: UITableViewController {
         
         if let controller = self.controller {
             self.tableViewDataSource = ParticipantSetUpDataSource(self.tableView, controller: controller)
-            self.tableViewDelegate = ParticipantSetUpDelegate(self.tableView, controller: controller)
+            self.tableViewDelegate = ParticipantSetUpDelegate(self.tableView, controller: controller, delegated: self)
             
             if let participant = controller.participant {
                 self.title = participant.firstName

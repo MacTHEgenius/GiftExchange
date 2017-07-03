@@ -23,14 +23,14 @@ class ParticipantController {
         }
     }
     
-    func toggle(_ participant: Participant) {
+    func toggle(_ participant: Participant) throws {
         let count = self.parent.count
         let cantPickCount = self.cantPick.count + 1
         
         if let current = self.participant {
             
             if current.id == participant.id {
-                print("Cannot toggle self participant") // Alert ?
+                throw ParticipantError.cantToggleYourself
             } else {
                 if self.cantPick.contains(participant.id) {
                     self.cantPick.remove(at: self.cantPick.index(of: participant.id)!)
@@ -38,7 +38,7 @@ class ParticipantController {
                     if count - (cantPickCount + 1) >= 2 {
                         self.cantPick.append(participant.id)
                     } else {
-                        print("not enough")
+                        throw ParticipantError.notEnoughPicked(count: count - cantPickCount)
                     }
                 }
             }
@@ -63,6 +63,7 @@ class ParticipantController {
 
 enum ParticipantError: Error, Equatable {
     case notValid(errors: [String])
+    case cantToggleYourself
     case notEnoughPicked(count: Int)
 }
 
