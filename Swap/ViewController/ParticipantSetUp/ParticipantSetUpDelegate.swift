@@ -29,7 +29,7 @@ extension ParticipantSetUpDelegate: UITableViewDelegate {
             let participantSelected = self.controller.parent.participants[indexPath.row]
             if let participant = self.controller.participant, participant.id != participantSelected.id {
                 cell.select()
-                self.controller.toggle(participantSelected)//.doNotPick(participantSelected, isPicked: cell.check)
+                self.controller.toggle(participantSelected)
             }
         }
     }

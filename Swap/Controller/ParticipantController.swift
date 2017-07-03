@@ -23,7 +23,6 @@ class ParticipantController {
         }
     }
     
-    // Replacement of doNotPickParticipant:isPicked
     func toggle(_ participant: Participant) {
         let count = self.parent.count
         let cantPickCount = self.cantPick.count + 1
@@ -46,28 +45,6 @@ class ParticipantController {
             
         }
     }
-    
-    /*func doNotPick(_ participant: Participant, isPicked: Bool) {
-        if let current = self.participant {
-            print(self.parent.count, self.cantPick.count)
-            
-            if current.id == participant.id {
-                // error...
-            } else {
-                if self.parent.count - self.cantPick.count >= 2 {
-                    self.cantPick[participant.id] = isPicked
-                } else {
-                    print("not enough")
-                }
-            }
-            
-//            if self.parent.count - self.cantPick.count < 2 {
-//                print(self.parent.count, self.cantPick.count, "not enough")
-//            } else if current.id != participant.id {
-//                self.cantPick[participant.id] = isPicked
-//            }
-        }
-    }*/
     
     func save(_ participant: Participant) throws {
         participant.cantPick = self.cantPick
