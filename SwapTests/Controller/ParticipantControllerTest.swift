@@ -28,30 +28,36 @@ class ParticipantControllerTest: XCTestCase {
         self.controller = ParticipantController(self.participant, parent: self.parent)
     }
     
-    func testToggle_withCurrentParticipant() {
-        let expected = [String]()
-        
-        self.controller.toggle(self.participant)
-        
-        XCTAssertEqual(self.controller.cantPick, expected)
-    }
-    
     func testToggle_withParticipantNotPicked() {
         let expected = [Constant.other.id]
         
-        self.controller.toggle(Constant.other)
+        XCTAssertNoThrow(try self.controller.toggle(Constant.other), "toggle() did throw, but was not supposed to.")
         
         XCTAssertEqual(self.controller.cantPick, expected)
     }
     
-    func testPick_withAlreadyParticipantPicked() {
+    func testToggle_withAlreadyParticipantPicked() {
         let expected = [String]()
         self.participant.cantPick = [Constant.other.id]
         self.controller = ParticipantController(self.participant, parent: self.parent)
         
-        self.controller.toggle(Constant.other)
+        XCTAssertNoThrow(try self.controller.toggle(Constant.other), "toggle() did throw, but was not supposed to.")
         
         XCTAssertEqual(self.controller.cantPick, expected)
+    }
+    
+    func testToggle_shouldThrowCantToggleYourself_withCurrentParticipant() {
+        XCTAssertThrowsError(try self.controller.toggle(self.participant), "toggle() did throw, but was not supposed to.") { (error) in
+            XCTAssertEqual(error as! ParticipantError, ParticipantError.cantToggleYourself)
+        }
+    }
+    
+    func testToggle_shouldThrowNotEnoughPicked() {
+        self.parent.setReturnedCount(integer: 1)
+        
+        XCTAssertThrowsError(try self.controller.toggle(Constant.other), "toggle() did throw, but was not supposed to.") { (error) in
+            XCTAssertEqual(error as! ParticipantError, ParticipantError.notEnoughPicked(count: 0))
+        }
     }
     
     func testSave_ShouldNotThrow_WithAllValid() {

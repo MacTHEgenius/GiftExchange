@@ -70,6 +70,7 @@ enum ParticipantError: Error, Equatable {
 func ==(lhs: ParticipantError, rhs: ParticipantError) -> Bool {
     switch (lhs, rhs) {
     case (.notValid(let leftErrors), .notValid(let rightErrors)): return leftErrors == rightErrors
+    case (.notEnoughPicked(let leftCount), .notEnoughPicked(let rightCount)): return leftCount == rightCount
     default: return true
     }
 }

@@ -11,6 +11,19 @@ import Foundation
 
 class ParticipantsControllerMock: ParticipantsController {
     
+    // Count
+    private var mockCount: Int?
+    func setReturnedCount(integer: Int) {
+        self.mockCount = integer
+    }
     
+    override var count: Int {
+        get {
+            if let mock = self.mockCount {
+                return mock
+            }
+            return super.count
+        }
+    }
     
 }
