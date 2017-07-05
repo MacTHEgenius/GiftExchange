@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  Swap
+
+  Created by Benoît Lévesque on 2017-07-04.
+  Copyright © 2017 Benoît Lévesque. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "Échange";
+"CFBundleName" = "Échange";
