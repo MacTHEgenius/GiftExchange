@@ -28,22 +28,23 @@ class ResultsViewController: UIViewController {
         
         if let controller = self.participantsController {
             self.swap = SwapService(participantController: controller)
-            let results = swap!.roll()
-            
             self.dataSource = ResultsTableViewDataSource(tableView: self.resultsTable, participants: controller)
-            self.delegate = ResultsTableViewDelegate(parent: self, tableView: self.resultsTable, participants: controller, results: results)
+            self.delegate = ResultsTableViewDelegate(parent: self, tableView: self.resultsTable, participants: controller)
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         if let swap = self.swap {
             if let controller = self.participantsController, swap.reroll {
-                let result = swap.roll()
-                
                 self.topView.updateView(controller.participants.count)
-                self.dataSource?.updateData(participants: controller.firstNames)
-                self.delegate?.updateData(participants: controller.participants, newResults: result)
-                self.resultsTable.reloadData()
+                
+                if controller.participants.count >= 3 {
+                    let result = swap.roll()
+                    
+                    self.dataSource?.updateData(participants: controller.firstNames)
+                    self.delegate?.updateData(participants: controller.participants, newResults: result)
+                    self.resultsTable.reloadData()
+                }
             }
             
             swap.reroll = true

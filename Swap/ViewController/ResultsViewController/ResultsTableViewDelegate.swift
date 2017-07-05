@@ -14,9 +14,9 @@ class ResultsTableViewDelegate: NSObject {
     let parent: ResultsViewController
     
     private(set) var participants: [Participant]
-    private(set) var results: [Participant:Participant]
+    private(set) var results: [Participant:Participant]?
     
-    init(parent: ResultsViewController, tableView: UITableView, participants controller: ParticipantsController, results: [Participant:Participant]) {
+    init(parent: ResultsViewController, tableView: UITableView, participants controller: ParticipantsController, results: [Participant:Participant]? = nil) {
         self.parent = parent
         self.participants = controller.participants
         self.results = results
@@ -34,18 +34,20 @@ class ResultsTableViewDelegate: NSObject {
 extension ResultsTableViewDelegate: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let picker = self.participants[indexPath.row]
-        let picked = self.results[picker]!
-        
-        var completion: UIAlertController = ErrorAlertDirector.error()
-        let alert = PromptNipAlertDirector.enterNip { (nip) in
-            self.parent.dismiss(animated: true)
-            completion = (picker.nip == nip) ? PickedAlertDirector.picked(picked, completion: nil) : ErrorAlertDirector.error(with: "Nip is incorrect.")
-            self.parent.present(completion, animated: true)
+        if self.results != nil {
+            let picker = self.participants[indexPath.row]
+            let picked = self.results![picker]!
+            
+            var completion: UIAlertController = ErrorAlertDirector.error()
+            let alert = PromptNipAlertDirector.enterNip { (nip) in
+                self.parent.dismiss(animated: true)
+                completion = (picker.nip == nip) ? PickedAlertDirector.picked(picked, completion: nil) : ErrorAlertDirector.error(with: "Nip is incorrect.")
+                self.parent.present(completion, animated: true)
+            }
+            self.parent.present(alert, animated: true)
+            
+            tableView.deselectRow(at: indexPath, animated: true)
         }
-        self.parent.present(alert, animated: true)
-        
-        tableView.deselectRow(at: indexPath, animated: true)
     }
     
 }
