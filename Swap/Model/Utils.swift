@@ -14,10 +14,10 @@ public extension String {
     }
     
     func pluralize(_ count: Int) -> String {
-        if self.characters.last == "s" {
+        if self.last == "s" {
             if count < 2 {
                 let index = self.index(before: self.endIndex)
-                return "\(count) \(self.substring(to: index))"
+                return "\(count) \(self[index])"
             }
             return "\(count) \(self)"
         } else {

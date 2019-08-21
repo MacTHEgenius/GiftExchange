@@ -30,7 +30,7 @@ class Validate {
     }
     
     func length(of value: String, min: Int = 0, max: Int = Int.max) -> Validate {
-        let n = value.characters.count
+        let n = value.count
         let rule = n < min || n > max
         return self.execute(rule, error: .stringLength(field: self.field, short: n < min, maxOrMin: n >= min ? max : min, current: n))
     }

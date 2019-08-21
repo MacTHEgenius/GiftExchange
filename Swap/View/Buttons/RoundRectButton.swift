@@ -35,7 +35,7 @@ class RoundRectButton: UIButton {
     
     var text: String = "Button" {
         didSet {
-            super.setTitle(self.text, for: UIControlState())
+            super.setTitle(self.text, for: UIControl.State())
         }
     }
     
@@ -48,12 +48,12 @@ class RoundRectButton: UIButton {
     
     // MARK: - Action methods
     
-    func touchUpInside(sender: RoundRectButton) {
+    @objc func touchUpInside(sender: RoundRectButton) {
 //        print("touch up inside")
         self.alpha = 1
     }
     
-    func touchDown(sender: RoundRectButton) {
+    @objc func touchDown(sender: RoundRectButton) {
 //        print("touch down")
         self.alpha = 0.5
     }

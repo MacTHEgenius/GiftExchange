@@ -14,7 +14,7 @@ class NipCell: InfoCell, UITextFieldDelegate {
         static let maxLength = 4
     }
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.nameTextField.delegate = self
     }

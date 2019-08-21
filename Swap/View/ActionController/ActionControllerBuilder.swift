@@ -13,7 +13,7 @@ protocol ActionControllerBuildable {
 	var title: String { get set }
 	var message: String { get set }
 	
-	func setAction(withTitle title: String, actionStyle style: UIAlertActionStyle, handler: @escaping ((UIAlertAction) -> Void))
+	func setAction(withTitle title: String, actionStyle style: UIAlertAction.Style, handler: @escaping ((UIAlertAction) -> Void))
 	func setCancelAction()
 	func setOKAction(_ handler: ((UIAlertAction) -> Void)?)
 	func setTextField(withPlaceholder placeholder: String)
@@ -27,7 +27,7 @@ class ActionControllerBuilder: ActionControllerBuildable {
 	
 	fileprivate var actionControllerToBuild: UIAlertController
 	
-	init(withStyle style: UIAlertControllerStyle = .alert) {
+	init(withStyle style: UIAlertController.Style = .alert) {
 		self.actionControllerToBuild = UIAlertController(title: "", message: "", preferredStyle: style)
 	}
 	
@@ -49,7 +49,7 @@ class ActionControllerBuilder: ActionControllerBuildable {
 		}
     }
 	
-	func setAction(withTitle title: String, actionStyle style: UIAlertActionStyle, handler: @escaping ((UIAlertAction) -> Void)) {
+	func setAction(withTitle title: String, actionStyle style: UIAlertAction.Style, handler: @escaping ((UIAlertAction) -> Void)) {
 		let action = UIAlertAction(title: title, style: style, handler: handler)
 		self.actionControllerToBuild.addAction(action)
 	}
