@@ -33,7 +33,7 @@ class ParticipantController {
                 throw ParticipantError.cantToggleYourself
             } else {
                 if self.cantPick.contains(participant.id) {
-                    self.cantPick.remove(at: self.cantPick.index(of: participant.id)!)
+                    self.cantPick.remove(at: self.cantPick.firstIndex(of: participant.id)!)
                 } else {
                     if count - (cantPickCount + 1) >= 2 {
                         self.cantPick.append(participant.id)

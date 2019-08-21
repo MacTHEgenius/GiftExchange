@@ -42,7 +42,7 @@ class Participant: NSObject, Validable {
         return "<\(self.id), \(self.fullname)>"
     }
     
-    override var hashValue: Int {
+    override var hash: Int {
         return self.id.hashValue
     }
     
